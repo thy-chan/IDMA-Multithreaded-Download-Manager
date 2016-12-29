@@ -15,20 +15,20 @@ import java.awt.*;
 public class NavigationTreeCellRender extends DefaultTreeCellRenderer {
 
 
-	public Component getTreeCellRendererComponent(JTree tree, Object value,
-												  boolean sel, boolean expanded, boolean leaf, int row,
-												  boolean hasFocus) {
-		super.getTreeCellRendererComponent(tree, value, sel,
-				expanded, leaf, row, hasFocus);
-		//å¾—åˆ°æ ‘èŠ‚ç‚¹
-		DefaultMutableTreeNode node = (DefaultMutableTreeNode)value;
-		//å¾—åˆ°èŠ‚ç‚¹å¯¹è±¡
-		DownloadNode obj = (DownloadNode)node.getUserObject();
-		//è®¾ç½®æ–‡æœ¬ä¸Žå›¾ç‰‡
-		if (obj != null) {
-			this.setIcon(obj.getImageIcon());
-			this.setText(obj.getText());
-		}
-		return this;
-	}
+    public Component getTreeCellRendererComponent(JTree tree, Object value,
+                                                  boolean sel, boolean expanded, boolean leaf, int row,
+                                                  boolean hasFocus) {
+        super.getTreeCellRendererComponent(tree, value, sel,
+                expanded, leaf, row, hasFocus);
+        //µÃµ½Ê÷½Úµã
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode)value;
+        //µÃµ½½Úµã¶ÔÏó
+        DownloadNode obj = (DownloadNode)node.getUserObject();
+        //ÉèÖÃÎÄ±¾ÓëÍ¼Æ¬
+        if (obj != null) {
+            this.setIcon(obj.getImageIcon());
+            this.setText(obj.getText());
+        }
+        return this;
+    }
 }

@@ -5,7 +5,6 @@ package cn.thychan.mtdm.info;
  */
 
 public class Info {
-
     private String value;
 
     public Info(String value) {

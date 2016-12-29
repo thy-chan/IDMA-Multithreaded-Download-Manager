@@ -10,27 +10,27 @@ import java.io.Serializable;
  */
 
 /**
- * ä¸‹è½½ä»»åŠ¡çš„çŠ¶æ€æ¥å£
+ * ÏÂÔØÈÎÎñµÄ×´Ì¬½Ó¿Ú
  */
 public interface TaskState extends Serializable {
 
-	/**
-	 * è¿”å›è¯¥çŠ¶æ€ä¸‹çš„å›¾ç‰‡
-	 */
-	ImageIcon getIcon();
+    /**
+     * ·µ»Ø¸Ã×´Ì¬ÏÂµÄÍ¼Æ¬
+     */
+    ImageIcon getIcon();
 
-	/**
-	 * è¿”å›çŠ¶æ€çš„å­—ç¬¦ä¸²
-	 */
-	String getState();
+    /**
+     * ·µ»Ø×´Ì¬µÄ×Ö·û´®
+     */
+    String getState();
 
-	/**
-	 * è¯¥çŠ¶æ€åˆå§‹åŒ–æ‰§è¡Œçš„æ–¹æ³•
-	 */
-	void init(Resource resource);
+    /**
+     * ¸Ã×´Ì¬³õÊ¼»¯Ö´ĞĞµÄ·½·¨
+     */
+    void init(Resource resource);
 
-	/**
-	 * è¯¥çŠ¶æ€ç»“æŸæ—¶æ‰§è¡Œçš„æ–¹æ³•
-	 */
-	void destory(Resource resouse);
+    /**
+     * ¸Ã×´Ì¬½áÊøÊ±Ö´ĞĞµÄ·½·¨
+     */
+    void destory(Resource resouse);
 }

@@ -14,79 +14,79 @@ import java.util.*;
  */
 public class DownloadHandler {
 
-	public static Map<String, Timer> timers = new HashMap<String, Timer>();
+    public static Map<String, Timer> timers = new HashMap<String, Timer>();
 
-	public void stopTimer(Resource r) {
-		Timer t = timers.get(r.getId());
-		if (t != null) {
-			t.cancel();
-		}
-	}
+    public void stopTimer(Resource r) {
+        Timer t = timers.get(r.getId());
+        if (t != null) {
+            t.cancel();
+        }
+    }
 
-	public void doDownload(Resource r) {
-		try {
-			//è®¾ç½®ä¸‹è½½æ—¥æœŸ
-			if (r.getDownloadDate() == null) r.setDownloadDate(new Date());
-			r.setState(DownloadContext.CONNECTION);
-			//è®¡ç®—å‡ºæ¯ä¸€å—çš„å¤§å°
-			int partLength = r.getSize() / r.getThreadSize() + 1;
-			//æ—¶é—´è®¡ç®—ä»»åŠ¡
-			CountTimeTask timeTask = new CountTimeTask(r);
-			Timer timer = new Timer();
-			timer.schedule(timeTask, 0, 1000);
-			//å°†Timerå¯¹è±¡æ”¾åˆ°Mapä¸­, keyä¸ºè¯¥èµ„æºçš„id
-			timers.put(r.getId(), timer);
-			for (int i = 0; i < r.getThreadSize(); i++) {
-				int length = partLength;
-				//å¦‚æœæ˜¯æœ€åä¸€å—, åˆ™ä½¿ç”¨æ€»æ•°æ¥å‡å»å‰é¢å—çš„æ€»å’Œ
-				if (i == (r.getThreadSize() - 1)) {
-					length = r.getSize() - i * partLength;
-				}
-				//åˆ›å»ºå„ä¸ªPartå¯¹è±¡
-				Part p = new Part((i * partLength), length, 0);
-				r.getParts().add(p);
-				RandomAccessFile rav = new RandomAccessFile(r.getFilePath() +
-						File.separator + p.getPartName(), "rw");
-				DownloadThread t = new DownloadThread(r, rav, p);
-				//è®¾ç½®çº¿ç¨‹ä¼˜å…ˆçº§
-				t.setPriority(6);
-				t.start();
-			}
-		} catch (Exception e) {
-			r.setState(DownloadContext.FAILED);
-			e.printStackTrace();
-		}
-	}
+    public void doDownload(Resource r) {
+        try {
+            //ÉèÖÃÏÂÔØÈÕÆÚ
+            if (r.getDownloadDate() == null) r.setDownloadDate(new Date());
+            r.setState(DownloadContext.CONNECTION);
+            //¼ÆËã³öÃ¿Ò»¿éµÄ´óĞ¡
+            int partLength = r.getSize() / r.getThreadSize() + 1;
+            //Ê±¼ä¼ÆËãÈÎÎñ
+            CountTimeTask timeTask = new CountTimeTask(r);
+            Timer timer = new Timer();
+            timer.schedule(timeTask, 0, 1000);
+            //½«Timer¶ÔÏó·Åµ½MapÖĞ, keyÎª¸Ã×ÊÔ´µÄid
+            timers.put(r.getId(), timer);
+            for (int i = 0; i < r.getThreadSize(); i++) {
+                int length = partLength;
+                //Èç¹ûÊÇ×îºóÒ»¿é, ÔòÊ¹ÓÃ×ÜÊıÀ´¼õÈ¥Ç°Ãæ¿éµÄ×ÜºÍ
+                if (i == (r.getThreadSize() - 1)) {
+                    length = r.getSize() - i * partLength;
+                }
+                //´´½¨¸÷¸öPart¶ÔÏó
+                Part p = new Part((i * partLength), length, 0);
+                r.getParts().add(p);
+                RandomAccessFile rav = new RandomAccessFile(r.getFilePath() +
+                        File.separator + p.getPartName(), "rw");
+                DownloadThread t = new DownloadThread(r, rav, p);
+                //ÉèÖÃÏß³ÌÓÅÏÈ¼¶
+                t.setPriority(6);
+                t.start();
+            }
+        } catch (Exception e) {
+            r.setState(DownloadContext.FAILED);
+            e.printStackTrace();
+        }
+    }
 
-	public void resumeDownload(Resource r) {
-		if (r.getState() instanceof Finished) return;
-		try {
-			CountTimeTask timeTask = new CountTimeTask(r);
-			Timer timer = new Timer();
-			timer.schedule(timeTask, 0, 1000);
-			//å°†Timerå¯¹è±¡æ”¾åˆ°Mapä¸­, keyä¸ºè¯¥èµ„æºçš„id
-			timers.put(r.getId(), timer);
-			for (int i = 0; i < r.getParts().size(); i++) {
-				Part p = r.getParts().get(i);
-				RandomAccessFile rav = new RandomAccessFile(r.getFilePath() +
-						File.separator + p.getPartName(), "rw");
-				DownloadThread t = new DownloadThread(r, rav, p);
-				t.start();
-			}
-		} catch (Exception e) {
-			r.setState(DownloadContext.FAILED);
-			e.printStackTrace();
-		}
-	}
+    public void resumeDownload(Resource r) {
+        if (r.getState() instanceof Finished) return;
+        try {
+            CountTimeTask timeTask = new CountTimeTask(r);
+            Timer timer = new Timer();
+            timer.schedule(timeTask, 0, 1000);
+            //½«Timer¶ÔÏó·Åµ½MapÖĞ, keyÎª¸Ã×ÊÔ´µÄid
+            timers.put(r.getId(), timer);
+            for (int i = 0; i < r.getParts().size(); i++) {
+                Part p = r.getParts().get(i);
+                RandomAccessFile rav = new RandomAccessFile(r.getFilePath() +
+                        File.separator + p.getPartName(), "rw");
+                DownloadThread t = new DownloadThread(r, rav, p);
+                t.start();
+            }
+        } catch (Exception e) {
+            r.setState(DownloadContext.FAILED);
+            e.printStackTrace();
+        }
+    }
 
-	//è®¡ç®—æ—¶é—´ä»»åŠ¡
-	class CountTimeTask extends TimerTask {
-		private Resource r;
-		public CountTimeTask(Resource r) {
-			this.r = r;
-		}
-		public void run() {
-			r.setCostTime(r.getCostTime() + 1);
-		}
-	}
+    //¼ÆËãÊ±¼äÈÎÎñ
+    class CountTimeTask extends TimerTask {
+        private Resource r;
+        public CountTimeTask(Resource r) {
+            this.r = r;
+        }
+        public void run() {
+            r.setCostTime(r.getCostTime() + 1);
+        }
+    }
 }

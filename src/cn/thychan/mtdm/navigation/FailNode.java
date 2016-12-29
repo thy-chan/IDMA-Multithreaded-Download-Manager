@@ -9,16 +9,16 @@ import javax.swing.*;
  */
 
 /**
- * ä¸‹è½½å¤±è´¥å¯¼èˆªèŠ‚ç‚¹
+ * ÏÂÔØÊ§°Üµ¼º½½Úµã
  */
 public class FailNode implements DownloadNode {
 
-	public ImageIcon getImageIcon() {
-		return ImageUtil.FAIL_NODE_IMAGE;
-	}
+    public ImageIcon getImageIcon() {
+        return ImageUtil.FAIL_NODE_IMAGE;
+    }
 
-	public String getText() {
-		return "ä¸‹è½½å¤±è´¥";
-	}
+    public String getText() {
+        return "ÏÂÔØÊ§°Ü";
+    }
 
 }

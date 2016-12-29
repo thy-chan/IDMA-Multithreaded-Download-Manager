@@ -12,21 +12,21 @@ import javax.swing.*;
  */
 public class Pause extends AbstractState {
 
-	@Override
-	public ImageIcon getIcon() {
-		return ImageUtil.PAUSE_IMAGE;
-	}
+    @Override
+    public ImageIcon getIcon() {
+        return ImageUtil.PAUSE_IMAGE;
+    }
 
-	@Override
-	public String getState() {
-		return "pause";
-	}
+    @Override
+    public String getState() {
+        return "pause";
+    }
 
-	@Override
-	public void init(Resource resource) {
-		//èµ„æºæš‚åœåå–æ¶ˆä»»åŠ¡
-		ContextHolder.dh.stopTimer(resource);
-	}
+    @Override
+    public void init(Resource resource) {
+        //×ÊÔ´ÔİÍ£ºóÈ¡ÏûÈÎÎñ
+        ContextHolder.dh.stopTimer(resource);
+    }
 
 }
 

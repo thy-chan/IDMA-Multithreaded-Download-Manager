@@ -12,58 +12,58 @@ import java.io.File;
 
 public class ImageUtil {
 
-	//ä»»åŠ¡èŠ‚ç‚¹å›¾ç‰‡
-	public static final ImageIcon TASK_NODE_IMAGE = new ImageIcon("images/nav/task.png");
+    //ÈÎÎñ½ÚµãÍ¼Æ¬
+    public static final ImageIcon TASK_NODE_IMAGE = new ImageIcon("images/nav/task.png");
 
-	//ä¸‹è½½å®ŒæˆèŠ‚ç‚¹å›¾ç‰‡
-	public static final ImageIcon FINISH_NODE_IMAGE = new ImageIcon("images/nav/finish.png");
+    //ÏÂÔØÍê³É½ÚµãÍ¼Æ¬
+    public static final ImageIcon FINISH_NODE_IMAGE = new ImageIcon("images/nav/finish.png");
 
-	//ä¸‹è½½å¤±è´¥èŠ‚ç‚¹å›¾ç‰‡
-	public static final ImageIcon FAIL_NODE_IMAGE = new ImageIcon("images/nav/fail.png");
+    //ÏÂÔØÊ§°Ü½ÚµãÍ¼Æ¬
+    public static final ImageIcon FAIL_NODE_IMAGE = new ImageIcon("images/nav/fail.png");
 
-	//ä¸‹è½½å®Œæˆçš„èŠ‚ç‚¹
-	public static final ImageIcon DOWNLOADING_NODE_IMAGE = new ImageIcon("images/nav/downloading.png");
+    //ÏÂÔØÍê³ÉµÄ½Úµã
+    public static final ImageIcon DOWNLOADING_NODE_IMAGE = new ImageIcon("images/nav/downloading.png");
 
-	//æ­£åœ¨ä¸‹è½½çŠ¶æ€å›¾ç‰‡
-	public static final ImageIcon DOWNLOADING_IMAGE = new ImageIcon("images/state/downloading.png");
+    //ÕıÔÚÏÂÔØ×´Ì¬Í¼Æ¬
+    public static final ImageIcon DOWNLOADING_IMAGE = new ImageIcon("images/state/downloading.png");
 
-	//æ­£åœ¨è¿æ¥èµ„æºçš„å›¾ç‰‡
-	public static final ImageIcon CONNECTING_IMAGE = new ImageIcon("images/state/connecting.png");
+    //ÕıÔÚÁ¬½Ó×ÊÔ´µÄÍ¼Æ¬
+    public static final ImageIcon CONNECTING_IMAGE = new ImageIcon("images/state/connecting.png");
 
-	//ä¸‹è½½å®Œæˆçš„å›¾ç‰‡
-	public static final ImageIcon FINISHED_IMAGE = new ImageIcon("images/state/finished.png");
+    //ÏÂÔØÍê³ÉµÄÍ¼Æ¬
+    public static final ImageIcon FINISHED_IMAGE = new ImageIcon("images/state/finished.png");
 
-	//ä¸èƒ½è¿æ¥çš„å›¾ç‰‡
-	public static final ImageIcon FAILED_IMAGE = new ImageIcon("images/state/failed.png");
+    //²»ÄÜÁ¬½ÓµÄÍ¼Æ¬
+    public static final ImageIcon FAILED_IMAGE = new ImageIcon("images/state/failed.png");
 
-	//æš‚åœä¸‹è½½çš„å›¾ç‰‡
-	public static final ImageIcon PAUSE_IMAGE = new ImageIcon("images/state/pause.png");
-	//æ‚¬æµ®å›¾æ ‡
-	public static final String SUSPEND_IMAGE_PATH = "images/icon/mtdm.png";
-	//æ‚¬æµ®æ‰“å¼€ä¸»çª—ä½“èœå•
-	public static final ImageIcon SUSPEND_OPEN_IAMGE = new ImageIcon("images/suspend/open.png");
-	//æ‚¬æµ®æ–°ä»»åŠ¡èœå•
-	public static final ImageIcon SUSPEND_NEW_IAMGE = new ImageIcon("images/suspend/add.png");
-	//æ‚¬æµ®å¼€å§‹ä»»åŠ¡èœå•
-	public static final ImageIcon SUSPEND_START_IAMGE = new ImageIcon("images/suspend/start.png");
-	//æ‚¬æµ®æš‚åœä»»åŠ¡èœå•
-	public static final ImageIcon SUSPEND_PAUSE_IAMGE = new ImageIcon("images/suspend/pause.png");
-	//åˆ é™¤å·²å®Œæˆä»»åŠ¡
-	public static final ImageIcon SUSPEND_REMOVE_IAMGE = new ImageIcon("images/suspend/remove.png");
-	//é€€å‡ºèœå•
-	public static final ImageIcon SUSPEND_QUIT_IAMGE = new ImageIcon("images/suspend/quit.png");
-	//å·¥å…·æ å›¾ç‰‡
-	public static final String TRAY_ICON_PATH = "images/icon/mtdm_trayicon.png";
+    //ÔİÍ£ÏÂÔØµÄÍ¼Æ¬
+    public static final ImageIcon PAUSE_IMAGE = new ImageIcon("images/state/pause.png");
+    //Ğü¸¡Í¼±ê
+    public static final String SUSPEND_IMAGE_PATH = "images/icon/mtdm.png";
+    //Ğü¸¡´ò¿ªÖ÷´°Ìå²Ëµ¥
+    public static final ImageIcon SUSPEND_OPEN_IAMGE = new ImageIcon("images/suspend/open.png");
+    //Ğü¸¡ĞÂÈÎÎñ²Ëµ¥
+    public static final ImageIcon SUSPEND_NEW_IAMGE = new ImageIcon("images/suspend/add.png");
+    //Ğü¸¡¿ªÊ¼ÈÎÎñ²Ëµ¥
+    public static final ImageIcon SUSPEND_START_IAMGE = new ImageIcon("images/suspend/start.png");
+    //Ğü¸¡ÔİÍ£ÈÎÎñ²Ëµ¥
+    public static final ImageIcon SUSPEND_PAUSE_IAMGE = new ImageIcon("images/suspend/pause.png");
+    //É¾³ıÒÑÍê³ÉÈÎÎñ
+    public static final ImageIcon SUSPEND_REMOVE_IAMGE = new ImageIcon("images/suspend/remove.png");
+    //ÍË³ö²Ëµ¥
+    public static final ImageIcon SUSPEND_QUIT_IAMGE = new ImageIcon("images/suspend/quit.png");
+    //¹¤¾ßÀ¸Í¼Æ¬
+    public static final String TRAY_ICON_PATH = "images/icon/mtdm_trayicon.png";
 
-	/**
-	 * è¿”å›æ‚¬æµ®å›¾ç‰‡
-	 */
-	public static BufferedImage getImage(String path) {
-		try {
-			return ImageIO.read(new File(path));
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+    /**
+     * ·µ»ØĞü¸¡Í¼Æ¬
+     */
+    public static BufferedImage getImage(String path) {
+        try {
+            return ImageIO.read(new File(path));
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }

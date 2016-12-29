@@ -18,129 +18,129 @@ import java.util.List;
  */
 public class DownloadThread extends Thread {
 
-	private URL url;
+    private URL url;
 
-	private RandomAccessFile raf;
+    private RandomAccessFile raf;
 
-	//ä¸‹è½½çš„èµ„æºå¯¹è±¡
-	private Resource resource;
+    //ÏÂÔØµÄ×ÊÔ´¶ÔÏó
+    private Resource resource;
 
-	//æœ¬çº¿ç¨‹éœ€è¦ä¸‹è½½çš„å—
-	private Part part;
+    //±¾Ïß³ÌĞèÒªÏÂÔØµÄ¿é
+    private Part part;
 
-	/**
-	 * ä¸‹è½½çº¿ç¨‹æ„é€ å™¨
-	 */
-	public DownloadThread(Resource resource, RandomAccessFile raf, Part part) {
-		this.url = createURL(resource.getUrl());
-		this.raf = raf;
-		this.part = part;
-		this.resource = resource;
-	}
+    /**
+     * ÏÂÔØÏß³Ì¹¹ÔìÆ÷
+     */
+    public DownloadThread(Resource resource, RandomAccessFile raf, Part part) {
+        this.url = createURL(resource.getUrl());
+        this.raf = raf;
+        this.part = part;
+        this.resource = resource;
+    }
 
-	private URL createURL(String urlPath) {
-		try {
-			return new URL(urlPath);
-		} catch (Exception e) {
-			throw new URLException("create url error");
-		}
-	}
+    private URL createURL(String urlPath) {
+        try {
+            return new URL(urlPath);
+        } catch (Exception e) {
+            throw new URLException("create url error");
+        }
+    }
 
-	public final static int MAX_BUFFER_SIZE = 1024;
+    public final static int MAX_BUFFER_SIZE = 1024;
 
-	public void run() {
-		try {
-			//è®¡ç®—å¼€å§‹ç‚¹ä¸ç»“æŸç‚¹
-			int begin = part.getBegin() + part.getCurrentLength();
-			int end = part.getBegin() + part.getLength() - 1;
-			//å¦‚æœæ˜¯å¼€å§‹ç‚¹å¤§äºç»“æŸç‚¹, è¯æ˜è¯¥å—å·²ç»ä¸‹è½½å®Œæˆ
-			if (begin >= end) {
-				this.raf.close();
-				return;
-			}
-			HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-			urlConnection.setRequestProperty("Range", "bytes=" + begin + "-" + end);
-			//å¦‚æœè¿æ¥ä¸ä¸Šç›¸åº”çš„åœ°å€, æŠ›å‡ºjava.net.UnknownHostException
-			urlConnection.connect();
-			//å¦‚æœæ‰¾ä¸åˆ°ç›¸åº”çš„èµ„æº, å°†æŠ›å‡ºjava.io.FileNotFoundException
-			InputStream is = urlConnection.getInputStream();
-			byte[] buffer = new byte[MAX_BUFFER_SIZE];
-			int perRead = 0;
-			//è®¾ç½®çŠ¶æ€ä¸ºä¸‹è½½
-			this.resource.setState(DownloadContext.DOWNLOADING);
-			//åœ¨.partæ–‡ä»¶ä¸­è®¾ç½®å½“å‰æ‰€è¯»å–çš„æŒ‡é’ˆ
-			this.raf.seek(this.part.getCurrentLength());
-			while ((perRead = is.read(buffer)) != -1) {
-				//åˆ¤æ–­èµ„æºå¯¹è±¡çš„çŠ¶æ€æ˜¯å¦è¢«ä¿®æ”¹æˆæš‚åœ
-				if (this.resource.getState() instanceof Pause) {
-					closeStream(is, urlConnection, this.raf);
-					return;
-				}
-				//åˆ¤æ–­èµ„æºå¯¹è±¡çŠ¶æ€
-				raf.write(buffer, 0, perRead);
-				this.part.setCurrentLength(this.part.getCurrentLength() + perRead);
-			}
-			closeStream(is, urlConnection, this.raf);
-			//åˆ¤æ–­æ˜¯å¦ä¸‹è½½å®Œæˆ, å¦‚æœä¸‹è½½å®Œæˆ, åˆ™è¿›è¡Œåˆå¹¶æ–‡ä»¶
-			//æ³¨æ„è¿™é‡Œéœ€è¦å¾—åˆ°æ•´ä¸ªæ–‡ä»¶çš„å¤§å°, è€Œä¸æ˜¯æŸä¸ª.partæ–‡ä»¶çš„å¤§å°
-			if (isFinished(this.resource.getSize())) uniteParts();
-		} catch (Exception e) {
-			this.resource.setState(DownloadContext.FAILED);
-			e.printStackTrace();
-		}
-	}
+    public void run() {
+        try {
+            //¼ÆËã¿ªÊ¼µãÓë½áÊøµã
+            int begin = part.getBegin() + part.getCurrentLength();
+            int end = part.getBegin() + part.getLength() - 1;
+            //Èç¹ûÊÇ¿ªÊ¼µã´óÓÚ½áÊøµã, Ö¤Ã÷¸Ã¿éÒÑ¾­ÏÂÔØÍê³É
+            if (begin >= end) {
+                this.raf.close();
+                return;
+            }
+            HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setRequestProperty("Range", "bytes=" + begin + "-" + end);
+            //Èç¹ûÁ¬½Ó²»ÉÏÏàÓ¦µÄµØÖ·, Å×³öjava.net.UnknownHostException
+            urlConnection.connect();
+            //Èç¹ûÕÒ²»µ½ÏàÓ¦µÄ×ÊÔ´, ½«Å×³öjava.io.FileNotFoundException
+            InputStream is = urlConnection.getInputStream();
+            byte[] buffer = new byte[MAX_BUFFER_SIZE];
+            int perRead = 0;
+            //ÉèÖÃ×´Ì¬ÎªÏÂÔØ
+            this.resource.setState(DownloadContext.DOWNLOADING);
+            //ÔÚ.partÎÄ¼şÖĞÉèÖÃµ±Ç°Ëù¶ÁÈ¡µÄÖ¸Õë
+            this.raf.seek(this.part.getCurrentLength());
+            while ((perRead = is.read(buffer)) != -1) {
+                //ÅĞ¶Ï×ÊÔ´¶ÔÏóµÄ×´Ì¬ÊÇ·ñ±»ĞŞ¸Ä³ÉÔİÍ£
+                if (this.resource.getState() instanceof Pause) {
+                    closeStream(is, urlConnection, this.raf);
+                    return;
+                }
+                //ÅĞ¶Ï×ÊÔ´¶ÔÏó×´Ì¬
+                raf.write(buffer, 0, perRead);
+                this.part.setCurrentLength(this.part.getCurrentLength() + perRead);
+            }
+            closeStream(is, urlConnection, this.raf);
+            //ÅĞ¶ÏÊÇ·ñÏÂÔØÍê³É, Èç¹ûÏÂÔØÍê³É, Ôò½øĞĞºÏ²¢ÎÄ¼ş
+            //×¢ÒâÕâÀïĞèÒªµÃµ½Õû¸öÎÄ¼şµÄ´óĞ¡, ¶ø²»ÊÇÄ³¸ö.partÎÄ¼şµÄ´óĞ¡
+            if (isFinished(this.resource.getSize())) uniteParts();
+        } catch (Exception e) {
+            this.resource.setState(DownloadContext.FAILED);
+            e.printStackTrace();
+        }
+    }
 
-	private void closeStream(InputStream is, HttpURLConnection urlConnection,
-							 RandomAccessFile raf) throws IOException {
-		is.close();
-		urlConnection.disconnect();
-		raf.close();
-	}
+    private void closeStream(InputStream is, HttpURLConnection urlConnection,
+                             RandomAccessFile raf) throws IOException {
+        is.close();
+        urlConnection.disconnect();
+        raf.close();
+    }
 
-	/**
-	 * åˆ¤æ–­æ˜¯å¦ä¸‹è½½å®Œæˆ, éå†ä¸‹è½½æ–‡ä»¶çš„å„ä¸ª.partæ–‡ä»¶
-	 */
-	private boolean isFinished(int fileLength) {
-		List<Part> parts = this.resource.getParts();
-		//è®¡ç®—å·²ä¸‹è½½çš„æ€»æ•°
-		int downCount = 0;
-		for (Part part : parts) downCount += part.getCurrentLength();
-		return (downCount >= fileLength) ? true : false;
-	}
+    /**
+     * ÅĞ¶ÏÊÇ·ñÏÂÔØÍê³É, ±éÀúÏÂÔØÎÄ¼şµÄ¸÷¸ö.partÎÄ¼ş
+     */
+    private boolean isFinished(int fileLength) {
+        List<Part> parts = this.resource.getParts();
+        //¼ÆËãÒÑÏÂÔØµÄ×ÜÊı
+        int downCount = 0;
+        for (Part part : parts) downCount += part.getCurrentLength();
+        return (downCount >= fileLength) ? true : false;
+    }
 
-	/**
-	 * åˆå¹¶partæ–‡ä»¶
-	 */
-	private void uniteParts() throws IOException {
-		List<Part> parts = this.resource.getParts();
-		//åˆ›å»ºæ–‡ä»¶è¾“å‡ºæµ, è¾“å‡ºåˆ°ä¸‹è½½æ–‡ä»¶
-		OutputStream bos = new FileOutputStream(this.resource.getSaveFile(),
-				false);
-		for (Part part : parts) {
-			//å¾—åˆ°.partæ–‡ä»¶
-			File partFile = new File(FileUtil.getPartFilePath(this.resource,
-					part));
-			//è·å¾—æ–‡ä»¶è¾“å…¥æµ
-			InputStream is = new FileInputStream(partFile);
-			byte[] buffer = new byte[1024];
-			int bytesRead;
-			int temp = 0;
-			while ((bytesRead = is.read(buffer)) != -1) {
-				temp += bytesRead;
-				//å†™åˆ°æ–‡ä»¶ä¸­
-				bos.write(buffer, 0, bytesRead);
-			}
-			is.close();
-		}
-		bos.close();
-		this.resource.setState(DownloadContext.FINISHED);
-	}
+    /**
+     * ºÏ²¢partÎÄ¼ş
+     */
+    private void uniteParts() throws IOException {
+        List<Part> parts = this.resource.getParts();
+        //´´½¨ÎÄ¼şÊä³öÁ÷, Êä³öµ½ÏÂÔØÎÄ¼ş
+        OutputStream bos = new FileOutputStream(this.resource.getSaveFile(),
+                false);
+        for (Part part : parts) {
+            //µÃµ½.partÎÄ¼ş
+            File partFile = new File(FileUtil.getPartFilePath(this.resource,
+                    part));
+            //»ñµÃÎÄ¼şÊäÈëÁ÷
+            InputStream is = new FileInputStream(partFile);
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            int temp = 0;
+            while ((bytesRead = is.read(buffer)) != -1) {
+                temp += bytesRead;
+                //Ğ´µ½ÎÄ¼şÖĞ
+                bos.write(buffer, 0, bytesRead);
+            }
+            is.close();
+        }
+        bos.close();
+        this.resource.setState(DownloadContext.FINISHED);
+    }
 
-	public static void main(String[] args) throws Exception {
-		int threadSize = 5;
+    public static void main(String[] args) throws Exception {
+        int threadSize = 5;
 
-		Resource f = new Resource("http://www.apache.org/dist/struts/library/struts-2.1.8.1-lib.zip",
-				"C:/test-download", "struts.zip", threadSize);
-		ContextHolder.dh.doDownload(f);
-	}
+        Resource f = new Resource("http://www.apache.org/dist/struts/library/struts-2.1.8.1-lib.zip",
+                "C:/test-download", "struts.zip", threadSize);
+        ContextHolder.dh.doDownload(f);
+    }
 }

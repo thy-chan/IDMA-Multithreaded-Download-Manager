@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="PROJECT" charset="UTF-8" />
+  <component name="Encoding" native2AsciiForPropertiesFiles="true">
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ContextHolder.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/DownloadContext.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/Main.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/exception/URLException.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/info/Info.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/DownloadNode.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/DownloadingNode.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/FailNode.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/FinishNode.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/TaskNode.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/object/Part.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/object/Resource.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/AbstractState.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/Connecting.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/Downloading.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/Failed.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/Finished.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/Pause.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/state/TaskState.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/thread/DownloadHandler.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/thread/DownloadThread.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/AboutFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadProgressBar.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTable.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableCellRenderer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableModel.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NavigationTree.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NavigationTreeCellRender.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskFrame.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/SuspendWindow.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/util/DateUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/util/FileUtil.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>

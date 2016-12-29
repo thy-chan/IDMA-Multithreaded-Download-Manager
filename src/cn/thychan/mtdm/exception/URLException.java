@@ -5,7 +5,6 @@ package cn.thychan.mtdm.exception;
  */
 
 public class URLException extends RuntimeException {
-
 	public URLException(String s) {
 		super(s);
 	}

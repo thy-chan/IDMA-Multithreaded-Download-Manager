@@ -12,21 +12,21 @@ import javax.swing.*;
  */
 public class Finished extends AbstractState {
 
-	@Override
-	public ImageIcon getIcon() {
-		return ImageUtil.FINISHED_IMAGE;
-	}
+    @Override
+    public ImageIcon getIcon() {
+        return ImageUtil.FINISHED_IMAGE;
+    }
 
-	public String getState() {
-		return "finished";
-	}
+    public String getState() {
+        return "finished";
+    }
 
-	public void init(Resource resource) {
-		//åˆ é™¤ä¸´æ—¶æ–‡ä»¶
-		FileUtil.deletePartFiles(resource);
-		//èµ„æºä¸‹è½½å®Œæˆåå–æ¶ˆä»»åŠ¡
-		ContextHolder.dh.stopTimer(resource);
-	}
+    public void init(Resource resource) {
+        //É¾³ıÁÙÊ±ÎÄ¼ş
+        FileUtil.deletePartFiles(resource);
+        //×ÊÔ´ÏÂÔØÍê³ÉºóÈ¡ÏûÈÎÎñ
+        ContextHolder.dh.stopTimer(resource);
+    }
 
 
 }

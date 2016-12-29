@@ -18,223 +18,223 @@ import java.io.File;
  */
 public class NewTaskFrame extends JFrame {
 
-	//ä¸‹è½½åœ°å€
-	private JLabel addressLabel = new JLabel("ä¸‹è½½åœ°å€: ");
-	private JTextField address = new JTextField(50);
+    //ÏÂÔØµØÖ·
+    private JLabel addressLabel = new JLabel("ÏÂÔØµØÖ·: ");
+    private JTextField address = new JTextField(50);
 
-	//æç¤ºçš„JLabel
-	private JLabel warnLabel = new JLabel(" ");
+    //ÌáÊ¾µÄJLabel
+    private JLabel warnLabel = new JLabel(" ");
 
-	//ä¿å­˜è·¯å¾„
-	private JLabel targetLabel = new JLabel("ä¿å­˜è‡³:     ");
-	private JTextField target = new JTextField(getDefaultFolder(), 20);
+    //±£´æÂ·¾¶
+    private JLabel targetLabel = new JLabel("±£´æÖÁ:     ");
+    private JTextField target = new JTextField(getDefaultFolder(), 20);
 
-	//çº¿ç¨‹æ•°
-	private JLabel threadCountLabel = new JLabel("çº¿ç¨‹æ•°: ");
-	private JComboBox threadCount;
-	private JButton targetSelectButton = new JButton("æµè§ˆ");
+    //Ïß³ÌÊı
+    private JLabel threadCountLabel = new JLabel("Ïß³ÌÊı: ");
+    private JComboBox threadCount;
+    private JButton targetSelectButton = new JButton("ä¯ÀÀ");
 
-	//æ–‡ä»¶å
-	private JLabel saveFileNameLabel = new JLabel("å¦å­˜æ–‡ä»¶å: ");
-	private JTextField saveFileName = new JTextField(5);
+    //ÎÄ¼şÃû
+    private JLabel saveFileNameLabel = new JLabel("Áí´æÎÄ¼şÃû: ");
+    private JTextField saveFileName = new JTextField(5);
 
-	//æŒ‰é’®
-	private JButton confirmButton = new JButton("ç¡®å®š");
-	private JButton cancelButton = new JButton("å–æ¶ˆ");
+    //°´Å¥
+    private JButton confirmButton = new JButton("È·¶¨");
+    private JButton cancelButton = new JButton("È¡Ïû");
 
-	private FolderChooser folderChooser;
+    private FolderChooser folderChooser;
 
-	public NewTaskFrame() {
-		//åˆ›å»ºçº¿ç¨‹ä¸‹æ‹‰
-		createThreadCountSelect();
-		this.targetSelectButton.setFont(new Font(null, Font.PLAIN, 12));
-		this.target.setEditable(false);
-		//ä¿¡æ¯æç¤ºçš„JLabel
-		Box warnBox = Box.createHorizontalBox();
-		warnBox.add(this.warnLabel);
-		//ä¸‹è½½åœ°å€Box
-		Box addressBox = Box.createHorizontalBox();
-		addressBox.add(Box.createHorizontalStrut(50));
-		addressBox.add(this.addressLabel);
-		addressBox.add(Box.createHorizontalStrut(20));
-		addressBox.add(this.address);
-		addressBox.add(Box.createHorizontalStrut(50));
-		//ä¸‹è½½æ–‡ä»¶ä¿å­˜ç›®å½•
-		Box targetBox = Box.createHorizontalBox();
-		targetBox.add(Box.createHorizontalStrut(50));
-		targetBox.add(this.targetLabel);
-		targetBox.add(Box.createHorizontalStrut(20));
-		targetBox.add(this.target);
-		targetBox.add(Box.createHorizontalStrut(50));
-		//å¦å­˜æ–‡ä»¶åå’Œç›®å½•é€‰æ‹©æŒ‰é’®
-		Box selectFolderBox = Box.createHorizontalBox();
-		selectFolderBox.add(Box.createHorizontalStrut(50));
-		selectFolderBox.add(this.saveFileNameLabel);
-		selectFolderBox.add(Box.createHorizontalStrut(7));
-		selectFolderBox.add(this.saveFileName);
-		selectFolderBox.add(Box.createHorizontalStrut(50));
-		selectFolderBox.add(this.targetSelectButton);
-		selectFolderBox.add(Box.createHorizontalStrut(50));
-		//çº¿ç¨‹é€‰æ‹©
-		Box threadBox = Box.createHorizontalBox();
-		threadBox.add(Box.createHorizontalStrut(50));
-		threadBox.add(this.threadCountLabel);
-		threadBox.add(Box.createHorizontalStrut(33));
-		threadBox.add(this.threadCount);
-		threadBox.add(Box.createHorizontalStrut(330));
-		//æŒ‰é’®Box
-		Box buttonBox = Box.createHorizontalBox();
-		buttonBox.add(Box.createHorizontalStrut(70));
-		buttonBox.add(this.confirmButton);
-		buttonBox.add(Box.createHorizontalStrut(40));
-		buttonBox.add(this.cancelButton);
-		buttonBox.add(Box.createHorizontalStrut(50));
-		//ä¸»å¸ƒå±€Box
-		Box mainBox = Box.createVerticalBox();
-		mainBox.add(Box.createVerticalStrut(10));
-		mainBox.add(warnBox);
-		mainBox.add(Box.createVerticalStrut(10));
-		mainBox.add(addressBox);
-		mainBox.add(Box.createVerticalStrut(10));
-		mainBox.add(targetBox);
-		mainBox.add(Box.createVerticalStrut(10));
-		mainBox.add(selectFolderBox);
-		mainBox.add(Box.createVerticalStrut(10));
-		mainBox.add(threadBox);
-		mainBox.add(Box.createVerticalStrut(20));
-		mainBox.add(buttonBox);
-		mainBox.add(Box.createVerticalStrut(20));
-		//å¾—åˆ°å±å¹•å¤§å°
-		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		this.setLocation(screen.width/4, screen.height/4);
+    public NewTaskFrame() {
+        //´´½¨Ïß³ÌÏÂÀ­
+        createThreadCountSelect();
+        this.targetSelectButton.setFont(new Font(null, Font.PLAIN, 12));
+        this.target.setEditable(false);
+        //ĞÅÏ¢ÌáÊ¾µÄJLabel
+        Box warnBox = Box.createHorizontalBox();
+        warnBox.add(this.warnLabel);
+        //ÏÂÔØµØÖ·Box
+        Box addressBox = Box.createHorizontalBox();
+        addressBox.add(Box.createHorizontalStrut(50));
+        addressBox.add(this.addressLabel);
+        addressBox.add(Box.createHorizontalStrut(20));
+        addressBox.add(this.address);
+        addressBox.add(Box.createHorizontalStrut(50));
+        //ÏÂÔØÎÄ¼ş±£´æÄ¿Â¼
+        Box targetBox = Box.createHorizontalBox();
+        targetBox.add(Box.createHorizontalStrut(50));
+        targetBox.add(this.targetLabel);
+        targetBox.add(Box.createHorizontalStrut(20));
+        targetBox.add(this.target);
+        targetBox.add(Box.createHorizontalStrut(50));
+        //Áí´æÎÄ¼şÃûºÍÄ¿Â¼Ñ¡Ôñ°´Å¥
+        Box selectFolderBox = Box.createHorizontalBox();
+        selectFolderBox.add(Box.createHorizontalStrut(50));
+        selectFolderBox.add(this.saveFileNameLabel);
+        selectFolderBox.add(Box.createHorizontalStrut(7));
+        selectFolderBox.add(this.saveFileName);
+        selectFolderBox.add(Box.createHorizontalStrut(50));
+        selectFolderBox.add(this.targetSelectButton);
+        selectFolderBox.add(Box.createHorizontalStrut(50));
+        //Ïß³ÌÑ¡Ôñ
+        Box threadBox = Box.createHorizontalBox();
+        threadBox.add(Box.createHorizontalStrut(50));
+        threadBox.add(this.threadCountLabel);
+        threadBox.add(Box.createHorizontalStrut(33));
+        threadBox.add(this.threadCount);
+        threadBox.add(Box.createHorizontalStrut(330));
+        //°´Å¥Box
+        Box buttonBox = Box.createHorizontalBox();
+        buttonBox.add(Box.createHorizontalStrut(70));
+        buttonBox.add(this.confirmButton);
+        buttonBox.add(Box.createHorizontalStrut(40));
+        buttonBox.add(this.cancelButton);
+        buttonBox.add(Box.createHorizontalStrut(50));
+        //Ö÷²¼¾ÖBox
+        Box mainBox = Box.createVerticalBox();
+        mainBox.add(Box.createVerticalStrut(10));
+        mainBox.add(warnBox);
+        mainBox.add(Box.createVerticalStrut(10));
+        mainBox.add(addressBox);
+        mainBox.add(Box.createVerticalStrut(10));
+        mainBox.add(targetBox);
+        mainBox.add(Box.createVerticalStrut(10));
+        mainBox.add(selectFolderBox);
+        mainBox.add(Box.createVerticalStrut(10));
+        mainBox.add(threadBox);
+        mainBox.add(Box.createVerticalStrut(20));
+        mainBox.add(buttonBox);
+        mainBox.add(Box.createVerticalStrut(20));
+        //µÃµ½ÆÁÄ»´óĞ¡
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(screen.width/4, screen.height/4);
 
-		this.add(mainBox);
-		this.setTitle("æ–°å»ºä¸‹è½½ä»»åŠ¡");
-		this.pack();
-		//åˆå§‹åŒ–æŒ‰é’®ç›‘å¬å™¨
-		initLinsteners();
-	}
+        this.add(mainBox);
+        this.setTitle("ĞÂ½¨ÏÂÔØÈÎÎñ");
+        this.pack();
+        //³õÊ¼»¯°´Å¥¼àÌıÆ÷
+        initLinsteners();
+    }
 
-	private void initLinsteners() {
-		this.confirmButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				confirm();
-			}
-		});
-		this.cancelButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-			}
-		});
-		this.targetSelectButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				openFolderChooser();
-			}
-		});
-		this.address.getDocument().addDocumentListener(new DocumentListener() {
-			public void changedUpdate(DocumentEvent e) {
-				setSaveFileName();
-			}
-			public void insertUpdate(DocumentEvent e) {
-				setSaveFileName();
-			}
-			public void removeUpdate(DocumentEvent e) {
-				setSaveFileName();
-			}
-		});
-	}
+    private void initLinsteners() {
+        this.confirmButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                confirm();
+            }
+        });
+        this.cancelButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
+        this.targetSelectButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                openFolderChooser();
+            }
+        });
+        this.address.getDocument().addDocumentListener(new DocumentListener() {
+            public void changedUpdate(DocumentEvent e) {
+                setSaveFileName();
+            }
+            public void insertUpdate(DocumentEvent e) {
+                setSaveFileName();
+            }
+            public void removeUpdate(DocumentEvent e) {
+                setSaveFileName();
+            }
+        });
+    }
 
-	private void confirm() {
-		if (getSaveFileName() == null) {
-			this.warnLabel.setText("è¯·è¾“å…¥æ­£ç¡®çš„æ–‡ä»¶å");
-			return;
-		}
-		this.warnLabel.setText(" ");
-		Resource r = createResource();
-		ContextHolder.ctx.resources.add(r);
-		ContextHolder.dh.doDownload(r);
-		this.setVisible(false);
-	}
+    private void confirm() {
+        if (getSaveFileName() == null) {
+            this.warnLabel.setText("ÇëÊäÈëÕıÈ·µÄÎÄ¼şÃû");
+            return;
+        }
+        this.warnLabel.setText(" ");
+        Resource r = createResource();
+        ContextHolder.ctx.resources.add(r);
+        ContextHolder.dh.doDownload(r);
+        this.setVisible(false);
+    }
 
-	//æ ¹æ®ç•Œé¢è¾“å…¥åˆ›å»ºResourceå¯¹è±¡
-	private Resource createResource() {
-		String url = this.address.getText();
-		String filePath = this.target.getText();
-		String fileName = getSaveFileName();
-		int threadCount = (Integer)this.threadCount.getSelectedItem();
-		return new Resource(url, filePath, fileName, threadCount);
-	}
+    //¸ù¾İ½çÃæÊäÈë´´½¨Resource¶ÔÏó
+    private Resource createResource() {
+        String url = this.address.getText();
+        String filePath = this.target.getText();
+        String fileName = getSaveFileName();
+        int threadCount = (Integer)this.threadCount.getSelectedItem();
+        return new Resource(url, filePath, fileName, threadCount);
+    }
 
-	/**
-	 * å¦‚æœä¿å­˜çš„æ–‡ä»¶åç§°ä¸ºç©º, åˆ™ä»urlä¸­æˆªå–æ–‡ä»¶åç§°
-	 */
-	private String getSaveFileName() {
-		String url = this.address.getText();
-		String saveFileName = this.saveFileName.getText();
-		if (saveFileName == null || saveFileName.equals("")) {
-			saveFileName = FileUtil.getFileName(url);
-		}
-		return saveFileName;
-	}
+    /**
+     * Èç¹û±£´æµÄÎÄ¼şÃû³ÆÎª¿Õ, Ôò´ÓurlÖĞ½ØÈ¡ÎÄ¼şÃû³Æ
+     */
+    private String getSaveFileName() {
+        String url = this.address.getText();
+        String saveFileName = this.saveFileName.getText();
+        if (saveFileName == null || saveFileName.equals("")) {
+            saveFileName = FileUtil.getFileName(url);
+        }
+        return saveFileName;
+    }
 
-	/**
-	 * è®¾ç½®å¦å­˜ä¸ºåç§°çš„å€¼
-	 */
-	private void setSaveFileName() {
-		saveFileName.setText("");
-		saveFileName.setText(FileUtil.getFileName(address.getText()));
-	}
+    /**
+     * ÉèÖÃÁí´æÎªÃû³ÆµÄÖµ
+     */
+    private void setSaveFileName() {
+        saveFileName.setText("");
+        saveFileName.setText(FileUtil.getFileName(address.getText()));
+    }
 
-	/**
-	 * åˆ›å»ºçº¿ç¨‹ä¸‹æ‹‰
-	 */
-	private void createThreadCountSelect() {
-		this.threadCount = new JComboBox();
-		for (int i = 1; i <= DownloadContext.MAX_THREAD_COUNT; i++) {
-			this.threadCount.addItem(i);
-		}
-	}
+    /**
+     * ´´½¨Ïß³ÌÏÂÀ­
+     */
+    private void createThreadCountSelect() {
+        this.threadCount = new JComboBox();
+        for (int i = 1; i <= DownloadContext.MAX_THREAD_COUNT; i++) {
+            this.threadCount.addItem(i);
+        }
+    }
 
-	/**
-	 * æ‰“å¼€æ–‡ä»¶é€‰æ‹©å™¨
-	 */
-	private void openFolderChooser() {
-		if (this.folderChooser == null) {
-			this.folderChooser = new FolderChooser();
-		}
-		folderChooser.showOpenDialog(null);
-	}
+    /**
+     * ´ò¿ªÎÄ¼şÑ¡ÔñÆ÷
+     */
+    private void openFolderChooser() {
+        if (this.folderChooser == null) {
+            this.folderChooser = new FolderChooser();
+        }
+        folderChooser.showOpenDialog(null);
+    }
 
-	public String getDefaultFolder() {
-		return System.getProperty("user.home");
-	}
+    public String getDefaultFolder() {
+        return System.getProperty("user.home");
+    }
 
-	/**
-	 * é€‰æ‹©ç›®å½•åæ‰§è¡Œçš„æ–¹æ³•
-	 */
-	public void selectFolder(String filePath) {
-		this.target.setText(filePath);
-	}
+    /**
+     * Ñ¡ÔñÄ¿Â¼ºóÖ´ĞĞµÄ·½·¨
+     */
+    public void selectFolder(String filePath) {
+        this.target.setText(filePath);
+    }
 
-	class FolderChooser extends JFileChooser {
+    class FolderChooser extends JFileChooser {
 
-		public FolderChooser() {
-			super(new File(System.getProperty("user.home")));
-			this.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-		}
+        public FolderChooser() {
+            super(new File(System.getProperty("user.home")));
+            this.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        }
 
-		public void approveSelection() {
-			super.approveSelection();
-			//è®¾ç½®å½“å‰æ‰“å¼€çš„ç›®å½•ä¸ºé»˜è®¤ç›®å½•
-			this.setCurrentDirectory(this.getSelectedFile());
-			selectFolder(this.getSelectedFile().getAbsolutePath());
-		}
-	}
+        public void approveSelection() {
+            super.approveSelection();
+            //ÉèÖÃµ±Ç°´ò¿ªµÄÄ¿Â¼ÎªÄ¬ÈÏÄ¿Â¼
+            this.setCurrentDirectory(this.getSelectedFile());
+            selectFolder(this.getSelectedFile().getAbsolutePath());
+        }
+    }
 
-	public static void main(String[] args) {
-		NewTaskFrame nsf = new NewTaskFrame();
-		nsf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		nsf.setVisible(true);
-	}
+    public static void main(String[] args) {
+        NewTaskFrame nsf = new NewTaskFrame();
+        nsf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        nsf.setVisible(true);
+    }
 }
 

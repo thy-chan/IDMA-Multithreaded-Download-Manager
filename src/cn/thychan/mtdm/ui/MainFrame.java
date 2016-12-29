@@ -24,472 +24,470 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
 /**
  * Created by cn_cx on 2016/12/8.
  */
 
-
-
 /**
- * ä¸»ç•Œé¢
+ * Ö÷½çÃæ
  */
 public class MainFrame extends JFrame {
 
-	//å¯¼èˆªæ ‘
-	private NavigationTree navTree;
-	//ä¸‹è½½åˆ—è¡¨
-	private DownloadTable downloadTable;
-	//ä¿¡æ¯åˆ—è¡¨
-	private JList infoJList;
-	//å·¥å…·æ 
-	private JToolBar toolBar = new JToolBar();
-	//æ–°ä»»åŠ¡ç•Œé¢
-	private NewTaskFrame taskFrame;
-	//å…³äºç•Œé¢
-	private AboutFrame aboutFrame;
-	//æ‰€æœ‰ä»»åŠ¡èŠ‚ç‚¹
-	private TaskNode taskNode = new TaskNode();
-	//æ­£åœ¨ä¸‹è½½èŠ‚ç‚¹
-	private DownloadingNode downloadingNode = new DownloadingNode();
-	//ä¸‹è½½å¤±è´¥èŠ‚ç‚¹
-	private FailNode failNode = new FailNode();
-	//ä¸‹è½½å®ŒæˆèŠ‚ç‚¹
-	private FinishNode finishNode = new FinishNode();
-	//å½“å‰ç”¨æˆ·æµè§ˆçš„èŠ‚ç‚¹
-	private DownloadNode currentNode = taskNode;
+    //µ¼º½Ê÷
+    private NavigationTree navTree;
+    //ÏÂÔØÁĞ±í
+    private DownloadTable downloadTable;
+    //ĞÅÏ¢ÁĞ±í
+    private JList infoJList;
+    //¹¤¾ßÀ¸
+    private JToolBar toolBar = new JToolBar();
+    //ĞÂÈÎÎñ½çÃæ
+    private NewTaskFrame taskFrame;
+    //¹ØÓÚ½çÃæ
+    private AboutFrame aboutFrame;
+    //ËùÓĞÈÎÎñ½Úµã
+    private TaskNode taskNode = new TaskNode();
+    //ÕıÔÚÏÂÔØ½Úµã
+    private DownloadingNode downloadingNode = new DownloadingNode();
+    //ÏÂÔØÊ§°Ü½Úµã
+    private FailNode failNode = new FailNode();
+    //ÏÂÔØÍê³É½Úµã
+    private FinishNode finishNode = new FinishNode();
+    //µ±Ç°ÓÃ»§ä¯ÀÀµÄ½Úµã
+    private DownloadNode currentNode = taskNode;
 
-	//ä¿¡æ¯åˆ—è¡¨çš„å¯¹è±¡
-	private final static String FILE_SIZE_TEXT = "æ–‡ä»¶å¤§å°: ";
-	private final static String FILE_PATH_TEXT = "æ–‡ä»¶è·¯å¾„: ";
-	private final static String DOWNLOAD_DATE_TEXT = "ä¸‹è½½æ—¶é—´: ";
-	private final static String RESOURCE_INFO_TEXT = "èµ„æºä¿¡æ¯: ";
-	private List<Info> infoList = new ArrayList<Info>();
-	private Info fileSize = new Info(FILE_SIZE_TEXT);
-	private Info filePath = new Info(FILE_PATH_TEXT);
-	private Info downloadDate = new Info(DOWNLOAD_DATE_TEXT);
-	private Info info = new Info(RESOURCE_INFO_TEXT);
+    //ĞÅÏ¢ÁĞ±íµÄ¶ÔÏó
+    private final static String FILE_SIZE_TEXT = "ÎÄ¼ş´óĞ¡: ";
+    private final static String FILE_PATH_TEXT = "ÎÄ¼şÂ·¾¶: ";
+    private final static String DOWNLOAD_DATE_TEXT = "ÏÂÔØÊ±¼ä: ";
+    private final static String RESOURCE_INFO_TEXT = "×ÊÔ´ĞÅÏ¢: ";
+    private List<Info> infoList = new ArrayList<Info>();
+    private Info fileSize = new Info(FILE_SIZE_TEXT);
+    private Info filePath = new Info(FILE_PATH_TEXT);
+    private Info downloadDate = new Info(DOWNLOAD_DATE_TEXT);
+    private Info info = new Info(RESOURCE_INFO_TEXT);
 
-	private Action newTask = new AbstractAction("æ–°ä»»åŠ¡", new ImageIcon("images/tool/new_task.png")) {
-		public void actionPerformed(ActionEvent e) {
-			newTask();
-		}
-	};
+    private Action newTask = new AbstractAction("ĞÂÈÎÎñ", new ImageIcon("images/tool/new_task.png")) {
+        public void actionPerformed(ActionEvent e) {
+            newTask();
+        }
+    };
+    private Action start = new AbstractAction("¿ªÊ¼", new ImageIcon("images/tool/begin.png")) {
+        public void actionPerformed(ActionEvent e) {
+            start();
+        }
+    };
 
-	private Action start = new AbstractAction("å¼€å§‹", new ImageIcon("images/tool/begin.png")) {
-		public void actionPerformed(ActionEvent e) {
-			start();
-		}
-	};
+    private Action pause = new AbstractAction("ÔİÍ£", new ImageIcon("images/tool/pause.png")) {
+        public void actionPerformed(ActionEvent e) {
+            pause();
+        }
+    };
 
-	private Action pause = new AbstractAction("æš‚åœ", new ImageIcon("images/tool/pause.png")) {
-		public void actionPerformed(ActionEvent e) {
-			pause();
-		}
-	};
+    private Action delete = new AbstractAction("É¾³ıÈÎÎñ", new ImageIcon("images/tool/delete.png")) {
+        public void actionPerformed(ActionEvent e) {
+            delete();
+        }
+    };
 
-	private Action delete = new AbstractAction("åˆ é™¤ä»»åŠ¡", new ImageIcon("images/tool/delete.png")) {
-		public void actionPerformed(ActionEvent e) {
-			delete();
-		}
-	};
+    private Action deleteFinished = new AbstractAction("ÒÆ³ıÈÎÎñ", new ImageIcon("images/tool/remove.png")) {
+        public void actionPerformed(ActionEvent e) {
+            deleteFinished();
+        }
+    };
 
-	private Action deleteFinished = new AbstractAction("ç§»é™¤ä»»åŠ¡", new ImageIcon("images/tool/remove.png")) {
-		public void actionPerformed(ActionEvent e) {
-			deleteFinished();
-		}
-	};
+    private Action about = new AbstractAction("¹ØÓÚ", new ImageIcon("images/tool/about.png")) {
+        public void actionPerformed(ActionEvent e) {
+            about();
+        }
+    };
 
-	private Action about = new AbstractAction("å…³äº", new ImageIcon("images/tool/about.png")) {
-		public void actionPerformed(ActionEvent e) {
-			about();
-		}
-	};
+    ActionListener refreshTable = new ActionListener() {
+        public void actionPerformed(ActionEvent e) {
+            //Ë¢ĞÂÁĞ±í
+            downloadTable.updateUI();
+        }
+    };
 
-	ActionListener refreshTable = new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			//åˆ·æ–°åˆ—è¡¨
-			downloadTable.updateUI();
-		}
-	};
+    //Ğü¸¡´°¿Ú
+    private SuspendWindow suspendWindow;
+    //ÈÎÎñÀ¸Í¼±ê
+    private TrayIcon trayIcon;
+    //ÈÎÎñÀ¸Í¼±ê²Ëµ¥
+    private PopupMenu popupMenu = new PopupMenu();
+    private MenuItem openItem = new MenuItem("´ò¿ª/¹Ø±Õ");
+    private MenuItem newItem = new MenuItem("ĞÂ½¨ÏÂÔØÈÎÎñ");
+    private MenuItem startItem = new MenuItem("¿ªÊ¼È«²¿ÈÎÎñ");
+    private MenuItem pauseItem = new MenuItem("ÔİÍ£È«²¿ÈÎÎñ");
+    private MenuItem removeItem = new MenuItem("É¾³ıÍê³ÉÈÎÎñ");
+    private MenuItem aboutItem = new MenuItem("¹ØÓÚ");
+    private MenuItem quitItem = new MenuItem("ÍË³ö");
 
-	//æ‚¬æµ®çª—å£
-	private SuspendWindow suspendWindow;
-	//ä»»åŠ¡æ å›¾æ ‡
-	private TrayIcon trayIcon;
-	//ä»»åŠ¡æ å›¾æ ‡èœå•
-	private PopupMenu popupMenu = new PopupMenu();
-	private MenuItem openItem = new MenuItem("æ‰“å¼€/å…³é—­");
-	private MenuItem newItem = new MenuItem("æ–°å»ºä¸‹è½½ä»»åŠ¡");
-	private MenuItem startItem = new MenuItem("å¼€å§‹å…¨éƒ¨ä»»åŠ¡");
-	private MenuItem pauseItem = new MenuItem("æš‚åœå…¨éƒ¨ä»»åŠ¡");
-	private MenuItem removeItem = new MenuItem("åˆ é™¤å®Œæˆä»»åŠ¡");
-	private MenuItem aboutItem = new MenuItem("å…³äº");
-	private MenuItem quitItem = new MenuItem("é€€å‡º");
+    private BufferedImage trayIconImage = ImageUtil.getImage(ImageUtil.TRAY_ICON_PATH);
 
-	private BufferedImage trayIconImage = ImageUtil.getImage(ImageUtil.TRAY_ICON_PATH);
+    public MainFrame() {
+        //´´½¨µ¼º½Ê÷
+        createTree();
+        createDownloadTable();
+        //´´½¨ĞÅÏ¢ÁĞ±í
+        createList();
+        this.taskFrame = new NewTaskFrame();
+        this.aboutFrame = new AboutFrame();
+        //´´½¨Ğü¸¡´°¿Ú
+        this.suspendWindow = new SuspendWindow(this);
+        //´´½¨ÈÎÎñÀ¸Í¼±ê
+        createTrayIcon();
+        //´´½¨¹¤¾ßÀ¸
+        createToolBar();
+        //ÉèÖÃÖ÷´°¿Ú´óĞ¡
+        Dimension screen = new Dimension(1000,600);
+        //µ¼º½¹ö¶¯
+        JScrollPane navPane = new JScrollPane(this.navTree);
+        JScrollPane downloadPane = new JScrollPane(this.downloadTable);
+        int downloadPaneHeight = (int)(screen.height/1.5);
+        int downloadPaneWidth = (int)(screen.width/0.8);
+        downloadPane.setPreferredSize(new Dimension(downloadPaneWidth, downloadPaneHeight));
+        JScrollPane infoPane = new JScrollPane(this.infoJList);
+        //Ö÷½çÃæÓÒ±ßµÄ·Ö¸ôPane
+        JSplitPane rightPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
+                downloadPane, infoPane);
+        rightPane.setDividerLocation(360);
+        rightPane.setDividerSize(3);
+        //Ö÷½çÃæµÄ·Ö¸ôPane
+        JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
+                navPane, rightPane);
+        mainPane.setDividerSize(3);
+        mainPane.setDividerLocation((int)(screen.width/5.5));
 
-	public MainFrame() {
-		//åˆ›å»ºå¯¼èˆªæ ‘
-		createTree();
-		createDownloadTable();
-		//åˆ›å»ºä¿¡æ¯åˆ—è¡¨
-		createList();
-		this.taskFrame = new NewTaskFrame();
-		this.aboutFrame = new AboutFrame();
-		//åˆ›å»ºæ‚¬æµ®çª—å£
-		this.suspendWindow = new SuspendWindow(this);
-		//åˆ›å»ºä»»åŠ¡æ å›¾æ ‡
-		createTrayIcon();
-		//åˆ›å»ºå·¥å…·æ 
-		createToolBar();
-		//è®¾ç½®ä¸»çª—å£å¤§å°
-		Dimension screen = new Dimension(1000,600);
-		//å¯¼èˆªæ»šåŠ¨
-		JScrollPane navPane = new JScrollPane(this.navTree);
-		JScrollPane downloadPane = new JScrollPane(this.downloadTable);
-		int downloadPaneHeight = (int)(screen.height/1.5);
-		int downloadPaneWidth = (int)(screen.width/0.8);
-		downloadPane.setPreferredSize(new Dimension(downloadPaneWidth, downloadPaneHeight));
-		JScrollPane infoPane = new JScrollPane(this.infoJList);
-		//ä¸»ç•Œé¢å³è¾¹çš„åˆ†éš”Pane
-		JSplitPane rightPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
-				downloadPane, infoPane);
-		rightPane.setDividerLocation(360);
-		rightPane.setDividerSize(3);
-		//ä¸»ç•Œé¢çš„åˆ†éš”Pane
-		JSplitPane mainPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,
-				navPane, rightPane);
-		mainPane.setDividerSize(3);
-		mainPane.setDividerLocation((int)(screen.width/5.5));
+        this.add(mainPane);
+        this.setPreferredSize(new Dimension(screen.width, screen.height));
+        this.setVisible(true);
+        this.setTitle("MTDM");
+        this.pack();
+        this.setLocation(450,210);
+        initlisteners();
+        //´´½¨¶¨Ê±Æ÷
+        Timer timer = new Timer(1000, refreshTable);
+        timer.start();
+        //¶ÁÈ¡ĞòÁĞ»¯ÎÄ¼ş
+        reverseSer();
+    }
 
-		this.add(mainPane);
-		this.setPreferredSize(new Dimension(screen.width, screen.height));
-		this.setVisible(true);
-		this.setTitle("MTDM");
-		this.pack();
-		this.setLocation(450,210);
-		initlisteners();
-		//åˆ›å»ºå®šæ—¶å™¨
-		Timer timer = new Timer(1000, refreshTable);
-		timer.start();
-		//è¯»å–åºåˆ—åŒ–æ–‡ä»¶
-		reverseSer();
-	}
+    public NewTaskFrame getNewTaskFrame() {
+        return this.taskFrame;
+    }
 
-	public NewTaskFrame getNewTaskFrame() {
-		return this.taskFrame;
-	}
+    public AboutFrame getAboutFrame(){
+        return this.aboutFrame;
+    }
 
-	public AboutFrame getAboutFrame(){
-		return this.aboutFrame;
-	}
+    /**
+     * ´´½¨ÈÎÎñÀ¸Í¼±ê
+     */
+    private void createTrayIcon() {
+        this.popupMenu.add(openItem);
+        this.popupMenu.add(newItem);
+        this.popupMenu.add(startItem);
+        this.popupMenu.add(pauseItem);
+        this.popupMenu.add(removeItem);
+        this.popupMenu.add(aboutItem);
+        this.popupMenu.add(quitItem);
 
-	/**
-	 * åˆ›å»ºä»»åŠ¡æ å›¾æ ‡
-	 */
-	private void createTrayIcon() {
-		this.popupMenu.add(openItem);
-		this.popupMenu.add(newItem);
-		this.popupMenu.add(startItem);
-		this.popupMenu.add(pauseItem);
-		this.popupMenu.add(removeItem);
-		this.popupMenu.add(aboutItem);
-		this.popupMenu.add(quitItem);
+        try {
+            SystemTray tray = SystemTray.getSystemTray();
+            this.trayIcon = new TrayIcon(trayIconImage, "MTDM", this.popupMenu);
+            this.trayIcon.setToolTip("MTDM");
+            tray.add(this.trayIcon);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-		try {
-			SystemTray tray = SystemTray.getSystemTray();
-			this.trayIcon = new TrayIcon(trayIconImage, "MTDM", this.popupMenu);
-			this.trayIcon.setToolTip("MTDM");
-			tray.add(this.trayIcon);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    private void initlisteners() {
+        //µã»÷ÁĞ±íÊó±ê¼àÌıÆ÷
+        this.downloadTable.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                //µÃµ½µã»÷µÄ×ÊÔ´
+                Resource r = getResource();
+                if (r == null) return;
+                //ÉèÖÃĞÅÏ¢ÏÔÊ¾ÇøÓòµÄÖµ
+                fileSize.setValue(FILE_SIZE_TEXT + r.getSize());
+                filePath.setValue(FILE_PATH_TEXT +
+                        r.getSaveFile().getAbsolutePath());
+                downloadDate.setValue(DOWNLOAD_DATE_TEXT +
+                        DateUtil.formatDate(r.getDownloadDate()));
+                info.setValue(RESOURCE_INFO_TEXT + r.getState().getState());
+                //ÖØĞÂÉèÖÃJListÊı¾İ
+                infoJList.setListData(infoList.toArray());
+            }
+        });
+        //µã»÷µ¼º½Ê÷Êó±ê¼àÌıÆ÷
+        this.navTree.addMouseListener(new MouseAdapter(){
+            public void mouseClicked(MouseEvent e) {
+                selectTree();
+            }
+        });
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                setVisible(false);
+            }
+        });
+        //ÈÎÎñÀ¸Í¼±ê¼àÌıÆ÷
+        this.trayIcon.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    setVisible(true);
+                }
+            }
+        });
+        this.openItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                if (isVisible()) setVisible(false);
+                else setVisible(true);
+            }
+        });
+        this.newItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                taskFrame.setVisible(true);
+            }
+        });
+        this.startItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                startAllTask();
+            }
+        });
+        this.pauseItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                pauseAllTask();
+            }
+        });
+        this.removeItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                deleteFinished();
+            }
+        });
+        this.quitItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                serializable();
+                System.exit(0);
+            }
+        });
+    }
 
-	private void initlisteners() {
-		//ç‚¹å‡»åˆ—è¡¨é¼ æ ‡ç›‘å¬å™¨
-		this.downloadTable.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				//å¾—åˆ°ç‚¹å‡»çš„èµ„æº
-				Resource r = getResource();
-				if (r == null) return;
-				//è®¾ç½®ä¿¡æ¯æ˜¾ç¤ºåŒºåŸŸçš„å€¼
-				fileSize.setValue(FILE_SIZE_TEXT + r.getSize());
-				filePath.setValue(FILE_PATH_TEXT +
-						r.getSaveFile().getAbsolutePath());
-				downloadDate.setValue(DOWNLOAD_DATE_TEXT +
-						DateUtil.formatDate(r.getDownloadDate()));
-				info.setValue(RESOURCE_INFO_TEXT + r.getState().getState());
-				//é‡æ–°è®¾ç½®JListæ•°æ®
-				infoJList.setListData(infoList.toArray());
-			}
-		});
-		//ç‚¹å‡»å¯¼èˆªæ ‘é¼ æ ‡ç›‘å¬å™¨
-		this.navTree.addMouseListener(new MouseAdapter(){
-			public void mouseClicked(MouseEvent e) {
-				selectTree();
-			}
-		});
-		this.addWindowListener(new WindowAdapter() {
-			public void windowClosing(WindowEvent e) {
-				setVisible(false);
-			}
-		});
-		//ä»»åŠ¡æ å›¾æ ‡ç›‘å¬å™¨
-		this.trayIcon.addMouseListener(new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 2) {
-					setVisible(true);
-				}
-			}
-		});
-		this.openItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (isVisible()) setVisible(false);
-				else setVisible(true);
-			}
-		});
-		this.newItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				taskFrame.setVisible(true);
-			}
-		});
-		this.startItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				startAllTask();
-			}
-		});
-		this.pauseItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				pauseAllTask();
-			}
-		});
-		this.removeItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				deleteFinished();
-			}
-		});
-		this.quitItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				serializable();
-				System.exit(0);
-			}
-		});
-	}
+    /**
+     * µã»÷µ¼º½Ê÷´¥·¢µÄ·½·¨
+     */
+    private void selectTree() {
+        DownloadNode selectNode = getSelectNode();
+        this.currentNode = selectNode;
+        refreshTable();
+    }
 
-	/**
-	 * ç‚¹å‡»å¯¼èˆªæ ‘è§¦å‘çš„æ–¹æ³•
-	 */
-	private void selectTree() {
-		DownloadNode selectNode = getSelectNode();
-		this.currentNode = selectNode;
-		refreshTable();
-	}
+    /**
+     * Ë¢ĞÂÁĞ±í
+     */
+    private void refreshTable() {
+        DownloadTableModel model = (DownloadTableModel)this.downloadTable.getModel();
+        model.setResources(ContextHolder.ctx.getResources(currentNode));
+    }
 
-	/**
-	 * åˆ·æ–°åˆ—è¡¨
-	 */
-	private void refreshTable() {
-		DownloadTableModel model = (DownloadTableModel)this.downloadTable.getModel();
-		model.setResources(ContextHolder.ctx.getResources(currentNode));
-	}
+    private DownloadNode getSelectNode() {
+        TreePath treePath = this.navTree.getSelectionPath();
+        if (treePath == null) return null;
+        //»ñµÃÑ¡ÖĞµÄTreeNode
+        DefaultMutableTreeNode node = (DefaultMutableTreeNode)treePath.getLastPathComponent();
+        return (DownloadNode)node.getUserObject();
+    }
 
-	private DownloadNode getSelectNode() {
-		TreePath treePath = this.navTree.getSelectionPath();
-		if (treePath == null) return null;
-		//è·å¾—é€‰ä¸­çš„TreeNode
-		DefaultMutableTreeNode node = (DefaultMutableTreeNode)treePath.getLastPathComponent();
-		return (DownloadNode)node.getUserObject();
-	}
+    private void addTableData() {
+        DownloadTableModel model = (DownloadTableModel)this.downloadTable.getModel();
+        //½«±£´æµÄ×ÊÔ´ÉèÖÃµ½ÁĞ±íÖĞ
+        model.setResources(ContextHolder.ctx.resources);
+        //Ë¢ĞÂÁĞ±í
+        this.downloadTable.refresh();
+    }
 
-	private void addTableData() {
-		DownloadTableModel model = (DownloadTableModel)this.downloadTable.getModel();
-		//å°†ä¿å­˜çš„èµ„æºè®¾ç½®åˆ°åˆ—è¡¨ä¸­
-		model.setResources(ContextHolder.ctx.resources);
-		//åˆ·æ–°åˆ—è¡¨
-		this.downloadTable.refresh();
-	}
+    /**
+     * ·´ĞòÁĞ»¯
+     */
+    public void reverseSer() {
+        File serFile = FileUtil.SERIALIZABLE_FILE;
+        if (!serFile.exists()) return;
+        try {
+            //µÃµ½ÎÄ¼şÊäÈëÁ÷
+            FileInputStream fis = new FileInputStream(serFile);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            //ÉèÖÃContextHolderµÄDownloadContext
+            ContextHolder.ctx = (DownloadContext)ois.readObject();
+            ois.close();
+            fis.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //ÉèÖÃÁĞ±í
+        addTableData();
+    }
 
-	/**
-	 * ååºåˆ—åŒ–
-	 */
-	public void reverseSer() {
-		File serFile = FileUtil.SERIALIZABLE_FILE;
-		if (!serFile.exists()) return;
-		try {
-			//å¾—åˆ°æ–‡ä»¶è¾“å…¥æµ
-			FileInputStream fis = new FileInputStream(serFile);
-			ObjectInputStream ois = new ObjectInputStream(fis);
-			//è®¾ç½®ContextHolderçš„DownloadContext
-			ContextHolder.ctx = (DownloadContext)ois.readObject();
-			ois.close();
-			fis.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//è®¾ç½®åˆ—è¡¨
-		addTableData();
-	}
+    /**
+     * ĞòÁĞ»¯(DownloadContext¶ÔÏó)
+     */
+    public void serializable() {
+        try {
+            //ĞòÁĞ»¯Ç°ÏÈ½«ËùÓĞÕıÔÚÏÂÔØµÄÈÎÎñÍ£Ö¹
+            for (Resource r : ContextHolder.ctx.resources) {
+                if (r.getState() instanceof Downloading) {
+                    r.setState(ContextHolder.ctx.PAUSE);
+                }
+            }
+            File serFile = FileUtil.SERIALIZABLE_FILE;
+            //ÅĞ¶ÏĞòÁĞ»¯ÎÄ¼şÊÇ·ñ´æÔÚ, ²»´æÔÚÔò´´½¨
+            if (!serFile.exists()) serFile.createNewFile();
+            FileOutputStream fos = new FileOutputStream(serFile);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            //½«ÉÏÏÂÎÄ¶ÔÏóĞ´µ½ĞòÁĞ»¯ÎÄ¼şÖĞ
+            oos.writeObject(ContextHolder.ctx);
+            oos.close();
+            fos.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
-	/**
-	 * åºåˆ—åŒ–(DownloadContextå¯¹è±¡)
-	 */
-	public void serializable() {
-		try {
-			//åºåˆ—åŒ–å‰å…ˆå°†æ‰€æœ‰æ­£åœ¨ä¸‹è½½çš„ä»»åŠ¡åœæ­¢
-			for (Resource r : ContextHolder.ctx.resources) {
-				if (r.getState() instanceof Downloading) {
-					r.setState(ContextHolder.ctx.PAUSE);
-				}
-			}
-			File serFile = FileUtil.SERIALIZABLE_FILE;
-			//åˆ¤æ–­åºåˆ—åŒ–æ–‡ä»¶æ˜¯å¦å­˜åœ¨, ä¸å­˜åœ¨åˆ™åˆ›å»º
-			if (!serFile.exists()) serFile.createNewFile();
-			FileOutputStream fos = new FileOutputStream(serFile);
-			ObjectOutputStream oos = new ObjectOutputStream(fos);
-			//å°†ä¸Šä¸‹æ–‡å¯¹è±¡å†™åˆ°åºåˆ—åŒ–æ–‡ä»¶ä¸­
-			oos.writeObject(ContextHolder.ctx);
-			oos.close();
-			fos.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+    public JTable getDownloadTable() {
+        return this.downloadTable;
+    }
 
-	public JTable getDownloadTable() {
-		return this.downloadTable;
-	}
+    private void createDownloadTable() {
+        DownloadTableModel tableModel = new DownloadTableModel();
+        this.downloadTable = new DownloadTable();
+        this.downloadTable.setModel(tableModel);
+        this.downloadTable.setTableFace();
+    }
 
-	private void createDownloadTable() {
-		DownloadTableModel tableModel = new DownloadTableModel();
-		this.downloadTable = new DownloadTable();
-		this.downloadTable.setModel(tableModel);
-		this.downloadTable.setTableFace();
-	}
+    private void createToolBar() {
+        this.toolBar.setFloatable(false);
+        this.toolBar.add(this.newTask).setToolTipText("Ìí¼ÓÈÎÎñ");
+        this.toolBar.add(this.start).setToolTipText("¿ªÊ¼ÈÎÎñ");
+        this.toolBar.add(this.pause).setToolTipText("ÔİÍ£");
+        this.toolBar.add(this.delete).setToolTipText("É¾³ı");
+        this.toolBar.add(this.deleteFinished).setToolTipText("ÒÆ³ıÒÑÍê³ÉµÄÈÎÎñ");
+        this.toolBar.add(this.about).setToolTipText("¹ØÓÚ");
 
-	private void createToolBar() {
-		this.toolBar.setFloatable(false);
-		this.toolBar.add(this.newTask).setToolTipText("æ·»åŠ ä»»åŠ¡");
-		this.toolBar.add(this.start).setToolTipText("å¼€å§‹ä»»åŠ¡");
-		this.toolBar.add(this.pause).setToolTipText("æš‚åœ");
-		this.toolBar.add(this.delete).setToolTipText("åˆ é™¤");
-		this.toolBar.add(this.deleteFinished).setToolTipText("ç§»é™¤å·²å®Œæˆçš„ä»»åŠ¡");
-		this.toolBar.add(this.about).setToolTipText("å…³äº");
-		this.toolBar.setMargin(new Insets(5, 10, 5, 5));
-		this.add(this.toolBar, BorderLayout.NORTH);
-	}
+        this.toolBar.setMargin(new Insets(5, 10, 5, 5));
+        this.add(this.toolBar, BorderLayout.NORTH);
 
-	private void start() {
-		Resource r = getResource();
-		if (r == null) return;
-		if (r.getState() instanceof Pause || r.getState() instanceof Failed) {
-			ContextHolder.dh.resumeDownload(r);
-		}
-	}
+    }
 
-	/**
-	 * å¼€å§‹å…¨éƒ¨ä»»åŠ¡
-	 */
-	public void startAllTask() {
-		for (Resource r : ContextHolder.ctx.resources) {
-			if (r.getState() instanceof Pause || r.getState() instanceof Failed) {
-				ContextHolder.dh.resumeDownload(r);
-			}
-		}
-	}
+    private void start() {
+        Resource r = getResource();
+        if (r == null) return;
+        if (r.getState() instanceof Pause || r.getState() instanceof Failed) {
+            ContextHolder.dh.resumeDownload(r);
+        }
+    }
 
-	/**
-	 * æš‚åœå…¨éƒ¨ä»»åŠ¡
-	 */
-	public void pauseAllTask() {
-		for (Resource r : ContextHolder.ctx.resources) {
-			if (r.getState() instanceof Downloading) {
-				r.setState(ContextHolder.ctx.PAUSE);
-			}
-		}
-	}
+    /**
+     * ¿ªÊ¼È«²¿ÈÎÎñ
+     */
+    public void startAllTask() {
+        for (Resource r : ContextHolder.ctx.resources) {
+            if (r.getState() instanceof Pause || r.getState() instanceof Failed) {
+                ContextHolder.dh.resumeDownload(r);
+            }
+        }
+    }
 
-	private void newTask() {
-		this.taskFrame.setVisible(true);
-	}
+    /**
+     * ÔİÍ£È«²¿ÈÎÎñ
+     */
+    public void pauseAllTask() {
+        for (Resource r : ContextHolder.ctx.resources) {
+            if (r.getState() instanceof Downloading) {
+                r.setState(ContextHolder.ctx.PAUSE);
+            }
+        }
+    }
 
-	private void pause() {
-		Resource r = getResource();
-		if (r == null) return;
-		//åˆ¤æ–­çŠ¶æ€
-		if (!(r.getState() instanceof Downloading)) return;
-		r.setState(ContextHolder.ctx.PAUSE);
-	}
+    private void newTask() {
+        this.taskFrame.setVisible(true);
+    }
 
-	/**
-	 * åˆ é™¤èµ„æº
-	 */
-	private void delete() {
-		Resource r = getResource();
-		if (r == null) return;
-		//å…ˆå°†ä»»åŠ¡åœæ­¢
-		r.setState(ContextHolder.ctx.PAUSE);
-		//åˆ é™¤æ‰€æœ‰çš„.partæ–‡ä»¶
-		FileUtil.deletePartFiles(r);
-		//ä»ä¸Šä¸‹æ–‡é›†åˆä¸­åˆ é™¤èµ„æº
-		ContextHolder.ctx.resources.remove(r);
-	}
+    private void pause() {
+        Resource r = getResource();
+        if (r == null) return;
+        //ÅĞ¶Ï×´Ì¬
+        if (!(r.getState() instanceof Downloading)) return;
+        r.setState(ContextHolder.ctx.PAUSE);
+    }
 
-	/**
-	 * åˆ é™¤å·²ä¸‹è½½å®Œæˆçš„èµ„æº
-	 */
-	public void deleteFinished() {
-		for (Iterator it = ContextHolder.ctx.resources.iterator(); it.hasNext();) {
-			Resource r = (Resource)it.next();
-			if (r.getState() instanceof Finished) {
-				it.remove();
-			}
-		}
-	}
+    /**
+     * É¾³ı×ÊÔ´
+     */
+    private void delete() {
+        Resource r = getResource();
+        if (r == null) return;
+        //ÏÈ½«ÈÎÎñÍ£Ö¹
+        r.setState(ContextHolder.ctx.PAUSE);
+        //É¾³ıËùÓĞµÄ.partÎÄ¼ş
+        FileUtil.deletePartFiles(r);
+        //´ÓÉÏÏÂÎÄ¼¯ºÏÖĞÉ¾³ı×ÊÔ´
+        ContextHolder.ctx.resources.remove(r);
+    }
 
-	/**
-	 * å…³äº
-	 */
-	public void about(){
-		this.aboutFrame.setVisible(true);
-	}
+    /**
+     * É¾³ıÒÑÏÂÔØÍê³ÉµÄ×ÊÔ´
+     */
+    public void deleteFinished() {
+        for (Iterator it = ContextHolder.ctx.resources.iterator(); it.hasNext();) {
+            Resource r = (Resource)it.next();
+            if (r.getState() instanceof Finished) {
+                it.remove();
+            }
+        }
+    }
 
-
-	/**
-	 * å¾—åˆ°ç”¨æˆ·åœ¨åˆ—è¡¨ä¸­æ‰€é€‰æ‹©çš„èµ„æº
-	 */
-	private Resource getResource() {
-		int row = this.downloadTable.getSelectedRow();
-		int column = this.downloadTable.getColumn(DownloadTableModel.ID_COLUMN).getModelIndex();
-		if (row == -1) return null;
-		String id = (String)this.downloadTable.getValueAt(row, column);
-		return ContextHolder.ctx.getResource(id);
-	}
+    /**
+     * ¹ØÓÚ
+     */
+    public void about(){
+        this.aboutFrame.setVisible(true);
+    }
 
 
-	/**
-	 * åˆ›å»ºæ ‘
-	 */
-	private void createTree() {
-		DefaultMutableTreeNode root = new DefaultMutableTreeNode();
-		DefaultMutableTreeNode tn = new DefaultMutableTreeNode(taskNode);
-		root.add(tn);
-		//åˆ›å»ºå„ä¸ªèŠ‚ç‚¹
-		tn.add(new DefaultMutableTreeNode(downloadingNode));
-		tn.add(new DefaultMutableTreeNode(failNode));
-		tn.add(new DefaultMutableTreeNode(finishNode));
-		this.navTree = new NavigationTree(root);
-	}
+    /**
+     * µÃµ½ÓÃ»§ÔÚÁĞ±íÖĞËùÑ¡ÔñµÄ×ÊÔ´
+     */
+    private Resource getResource() {
+        int row = this.downloadTable.getSelectedRow();
+        int column = this.downloadTable.getColumn(DownloadTableModel.ID_COLUMN).getModelIndex();
+        if (row == -1) return null;
+        String id = (String)this.downloadTable.getValueAt(row, column);
+        return ContextHolder.ctx.getResource(id);
+    }
 
-	private void createList() {
-		this.infoJList = new JList();
-		this.infoList.add(this.fileSize);
-		this.infoList.add(this.filePath);
-		this.infoList.add(this.downloadDate);
-		this.infoList.add(this.info);
-		this.infoJList.setListData(infoList.toArray());
-	}
+
+    /**
+     * ´´½¨Ê÷
+     */
+    private void createTree() {
+        DefaultMutableTreeNode root = new DefaultMutableTreeNode();
+        DefaultMutableTreeNode tn = new DefaultMutableTreeNode(taskNode);
+        root.add(tn);
+        //´´½¨¸÷¸ö½Úµã
+        tn.add(new DefaultMutableTreeNode(downloadingNode));
+        tn.add(new DefaultMutableTreeNode(failNode));
+        tn.add(new DefaultMutableTreeNode(finishNode));
+        this.navTree = new NavigationTree(root);
+    }
+
+    private void createList() {
+        this.infoJList = new JList();
+        this.infoList.add(this.fileSize);
+        this.infoList.add(this.filePath);
+        this.infoList.add(this.downloadDate);
+        this.infoList.add(this.info);
+        this.infoJList.setListData(infoList.toArray());
+    }
 
 
 }

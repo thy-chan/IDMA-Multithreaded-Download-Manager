@@ -9,19 +9,19 @@ import javax.swing.tree.TreePath;
  */
 
 /**
- * å¯¼èˆªæ ‘
+ * µ¼º½Ê÷
  */
 public class NavigationTree extends JTree {
 
-	public NavigationTree(DefaultMutableTreeNode root) {
-		super(root);
-		this.setRootVisible(false);
-		this.setShowsRootHandles(true);
-		this.setCellRenderer(new NavigationTreeCellRender());
-		//å±•å¼€ç¬¬ä¸€å±‚èŠ‚ç‚¹
-		for (int i = 0; i < root.getChildCount(); i++) {
-			DefaultMutableTreeNode node = (DefaultMutableTreeNode)root.getChildAt(i);
-			this.expandPath(new TreePath(node.getPath()));
-		}
-	}
+    public NavigationTree(DefaultMutableTreeNode root) {
+        super(root);
+        this.setRootVisible(false);
+        this.setShowsRootHandles(true);
+        this.setCellRenderer(new NavigationTreeCellRender());
+        //Õ¹¿ªµÚÒ»²ã½Úµã
+        for (int i = 0; i < root.getChildCount(); i++) {
+            DefaultMutableTreeNode node = (DefaultMutableTreeNode)root.getChildAt(i);
+            this.expandPath(new TreePath(node.getPath()));
+        }
+    }
 }

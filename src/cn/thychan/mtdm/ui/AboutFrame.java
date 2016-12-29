@@ -9,27 +9,27 @@ import java.awt.event.ActionListener;
  * Created by Administrator on 2016/12/8.
  */
 public class AboutFrame extends JFrame {
-    //鎻愮ず鐨凧Label
+    //提示的JLabel
     private JLabel author = new JLabel("Author: ThyChan");
     private JLabel blog = new JLabel("Blog: http://thychan.cn");
     private JLabel github = new JLabel("GitHub: https://github.com/thy-chan");
     private JLabel email = new JLabel("email: cn_cx@foxmail.com");
 
-    //鎸夐挳
-    private JButton confirmButton = new JButton("纭畾");
+    //按钮
+    private JButton confirmButton = new JButton("确定");
 
     public AboutFrame() {
-        //淇℃伅鎻愮ず鐨凧Label
+        //信息提示的JLabel
         Box warnBox = Box.createVerticalBox();
         warnBox.add(this.author);
         warnBox.add(this.blog);
         warnBox.add(this.github);
         warnBox.add(this.email);
-        //鎸夐挳Box
+        //按钮Box
         Box buttonBox = Box.createHorizontalBox();
         buttonBox.add(Box.createHorizontalStrut(70));
         buttonBox.add(this.confirmButton);
-        //涓诲竷灞�Box
+        //主布局Box
         Box mainBox = Box.createVerticalBox();
         mainBox.add(Box.createVerticalStrut(10));
         mainBox.add(warnBox);
@@ -38,14 +38,14 @@ public class AboutFrame extends JFrame {
         mainBox.add(Box.createVerticalStrut(20));
         mainBox.add(buttonBox);
         mainBox.add(Box.createVerticalStrut(20));
-        //寰楀埌灞忓箷澶у皬
+        //得到屏幕大小
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(screen.width/3+10, screen.height/3+10);
 
         this.add(mainBox);
         this.setTitle("About");
         this.pack();
-        //鍒濆鍖栨寜閽洃鍚櫒
+        //初始化按钮监听器
         initLinsteners();
     }
 

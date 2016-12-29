@@ -8,7 +8,7 @@ import javax.swing.*;
  */
 
 /**
- * 涓嬭浇瀹屾垚鑺傜偣
+ * 下载完成节点
  */
 
 public class FinishNode implements DownloadNode {
@@ -18,7 +18,7 @@ public class FinishNode implements DownloadNode {
     }
 
     public String getText() {
-        return "涓嬭浇瀹屾垚";
+        return "下载完成";
     }
 
 }

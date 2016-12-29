@@ -7,12 +7,12 @@ import cn.thychan.mtdm.ui.MainFrame;
  */
 
 /**
- * ç¨‹åºå…¥å£ç±»
+ * ³ÌĞòÈë¿ÚÀà
  */
 public class Main {
 
-	public static void main(String[] args) {
-		MainFrame mf = new MainFrame();
-	}
+    public static void main(String[] args) {
+        MainFrame mf = new MainFrame();
+    }
 
 }

@@ -8,58 +8,58 @@ import javax.swing.ListSelectionModel;
  */
 
 /**
- * ‰∏ãËΩΩÂàóË°®
+ * œ¬‘ÿ¡–±Ì
  */
 public class DownloadTable extends JTable {
 
-	public DownloadTable() {
-		super();
-	}
+    public DownloadTable() {
+        super();
+    }
 
-	public void refresh() {
-		DownloadTableModel tableModel = (DownloadTableModel)this.getModel();
-		//ÈÄöÁü•ÁõëÂê¨Âô®, Âú®ËåÉÂõ¥ÂÜÖÂä†ÂÖ•Êï∞ÊçÆ
-		tableModel.fireTableRowsInserted(getRowCount() - 1, getRowCount() - 1);
-		setTableFace();
-	}
+    public void refresh() {
+        DownloadTableModel tableModel = (DownloadTableModel)this.getModel();
+        //Õ®÷™º‡Ã˝∆˜, ‘⁄∑∂Œßƒ⁄º”»Î ˝æ›
+        tableModel.fireTableRowsInserted(getRowCount() - 1, getRowCount() - 1);
+        setTableFace();
+    }
 
-	public void setTableFace() {
-		this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		this.setRowHeight(25);
-		//ËÆæÁΩÆÂàóÂÆΩ
-		this.getColumn(DownloadTableModel.ID_COLUMN).setMinWidth(0);
-		this.getColumn(DownloadTableModel.ID_COLUMN).setMaxWidth(0);
-		this.getColumn(DownloadTableModel.STATE_COLUMN).setMaxWidth(40);
-		this.getColumn(DownloadTableModel.FILE_NAME_COLUMN).setMinWidth(200);
-		this.getColumn(DownloadTableModel.FILE_SIZE_COLUMN).setMinWidth(60);
-		this.getColumn(DownloadTableModel.PLAN_COLUMN).setMinWidth(180);
-		this.getColumn(DownloadTableModel.SPEED_COLUMN).setMinWidth(50);
-		this.getColumn(DownloadTableModel.HAS_DOWN_COLUMN).setMinWidth(50);
-		this.getColumn(DownloadTableModel.COST_TIME_COLUMN).setMinWidth(50);
-		this.getColumn(DownloadTableModel.SPARE_TIME_COLUMN).setMinWidth(50);
-		//ËÆæÁΩÆÂçïÂÖÉÊ†ºÊ∏≤Êüì
-		this.getColumn(DownloadTableModel.STATE_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		this.getColumn(DownloadTableModel.FILE_NAME_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		this.getColumn(DownloadTableModel.FILE_SIZE_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		this.getColumn(DownloadTableModel.PLAN_COLUMN).setCellRenderer(
-				new DownloadProgressBar());
-		this.getColumn(DownloadTableModel.SPEED_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		this.getColumn(DownloadTableModel.HAS_DOWN_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		this.getColumn(DownloadTableModel.COST_TIME_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		this.getColumn(DownloadTableModel.SPARE_TIME_COLUMN).setCellRenderer(
-				new DownloadTableCellRenderer());
-		//ÂéªÊéâË°®Ê†ºÁöÑÁ∫ø
-		setShowVerticalLines(false);
-	}
+    public void setTableFace() {
+        this.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        this.setRowHeight(25);
+        //…Ë÷√¡–øÌ
+        this.getColumn(DownloadTableModel.ID_COLUMN).setMinWidth(0);
+        this.getColumn(DownloadTableModel.ID_COLUMN).setMaxWidth(0);
+        this.getColumn(DownloadTableModel.STATE_COLUMN).setMaxWidth(40);
+        this.getColumn(DownloadTableModel.FILE_NAME_COLUMN).setMinWidth(200);
+        this.getColumn(DownloadTableModel.FILE_SIZE_COLUMN).setMinWidth(60);
+        this.getColumn(DownloadTableModel.PLAN_COLUMN).setMinWidth(180);
+        this.getColumn(DownloadTableModel.SPEED_COLUMN).setMinWidth(50);
+        this.getColumn(DownloadTableModel.HAS_DOWN_COLUMN).setMinWidth(50);
+        this.getColumn(DownloadTableModel.COST_TIME_COLUMN).setMinWidth(50);
+        this.getColumn(DownloadTableModel.SPARE_TIME_COLUMN).setMinWidth(50);
+        //…Ë÷√µ•‘™∏Ò‰÷»æ
+        this.getColumn(DownloadTableModel.STATE_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        this.getColumn(DownloadTableModel.FILE_NAME_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        this.getColumn(DownloadTableModel.FILE_SIZE_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        this.getColumn(DownloadTableModel.PLAN_COLUMN).setCellRenderer(
+                new DownloadProgressBar());
+        this.getColumn(DownloadTableModel.SPEED_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        this.getColumn(DownloadTableModel.HAS_DOWN_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        this.getColumn(DownloadTableModel.COST_TIME_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        this.getColumn(DownloadTableModel.SPARE_TIME_COLUMN).setCellRenderer(
+                new DownloadTableCellRenderer());
+        //»•µÙ±Ì∏Òµƒœﬂ
+        setShowVerticalLines(false);
+    }
 
-	public boolean isCellEditable(int row, int column) {
-		return false;
-	}
+    public boolean isCellEditable(int row, int column) {
+        return false;
+    }
 
 }

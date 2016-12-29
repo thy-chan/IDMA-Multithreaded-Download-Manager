@@ -8,13 +8,13 @@ import javax.swing.ImageIcon;
 
 public interface DownloadNode {
 
-	/**
-	 * 鑾峰緱鍚嶅瓧
-	 */
-	String getText();
+    /**
+     * 获得名字
+     */
+    String getText();
 
-	/**
-	 * 杩斿洖瀵瑰簲鍥炬爣
-	 */
-	ImageIcon getImageIcon();
+    /**
+     * 返回对应图标
+     */
+    ImageIcon getImageIcon();
 }

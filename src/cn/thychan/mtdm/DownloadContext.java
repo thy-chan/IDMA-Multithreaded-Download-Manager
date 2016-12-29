@@ -16,60 +16,60 @@ import java.util.List;
  */
 public class DownloadContext implements Serializable {
 
-	//æœ€å¤§çº¿ç¨‹æ•°
-	public static final int MAX_THREAD_COUNT = 5;
+    //×î´óÏß³ÌÊı
+    public static final int MAX_THREAD_COUNT = 5;
 
-	//ä¸‹è½½ä»»åŠ¡çŠ¶æ€çš„å„ä¸ªå®ç°ç±»
-	public static Connecting CONNECTION = new Connecting();
-	public static Downloading DOWNLOADING = new Downloading();
-	public static Failed FAILED = new Failed();
-	public static Finished FINISHED = new Finished();
-	public static Pause PAUSE = new Pause();
+    //ÏÂÔØÈÎÎñ×´Ì¬µÄ¸÷¸öÊµÏÖÀà
+    public static Connecting CONNECTION = new Connecting();
+    public static Downloading DOWNLOADING = new Downloading();
+    public static Failed FAILED = new Failed();
+    public static Finished FINISHED = new Finished();
+    public static Pause PAUSE = new Pause();
 
-	//å½“å‰ä¸‹è½½ç¨‹åºä¸­æ‰€æœ‰çš„ä»»åŠ¡
-	public List<Resource> resources = new ArrayList<Resource>();
+    //µ±Ç°ÏÂÔØ³ÌĞòÖĞËùÓĞµÄÈÎÎñ
+    public List<Resource> resources = new ArrayList<Resource>();
 
-	public List<Resource> getFaileds() {
-		return getResources(FAILED);
-	}
+    public List<Resource> getFaileds() {
+        return getResources(FAILED);
+    }
 
-	public List<Resource> getDownloadings() {
-		return getResources(DOWNLOADING);
-	}
+    public List<Resource> getDownloadings() {
+        return getResources(DOWNLOADING);
+    }
 
-	public List<Resource> getFinisheds() {
-		return getResources(FINISHED);
-	}
+    public List<Resource> getFinisheds() {
+        return getResources(FINISHED);
+    }
 
-	private List<Resource> getResources(TaskState state) {
-		List<Resource> result = new ArrayList<Resource>();
-		for (Resource r : resources) {
-			if (state.getState().equals(r.getState().getState())) {
-				result.add(r);
-			}
-		}
-		return result;
-	}
+    private List<Resource> getResources(TaskState state) {
+        List<Resource> result = new ArrayList<Resource>();
+        for (Resource r : resources) {
+            if (state.getState().equals(r.getState().getState())) {
+                result.add(r);
+            }
+        }
+        return result;
+    }
 
-	/**
-	 * æ ¹æ®IDå»å½“å‰çš„èµ„æºé›†åˆä¸­æŸ¥æ‰¾ç›¸åº”çš„èµ„æº
-	 */
-	public Resource getResource(String id) {
-		for (Resource r : this.resources) {
-			if (r.getId().equals(id)) return r;
-		}
-		return null;
-	}
+    /**
+     * ¸ù¾İIDÈ¥µ±Ç°µÄ×ÊÔ´¼¯ºÏÖĞ²éÕÒÏàÓ¦µÄ×ÊÔ´
+     */
+    public Resource getResource(String id) {
+        for (Resource r : this.resources) {
+            if (r.getId().equals(id)) return r;
+        }
+        return null;
+    }
 
-	public List<Resource> getResources(DownloadNode currentNode) {
-		if (currentNode instanceof FinishNode) {
-			return getFinisheds();
-		} else if (currentNode instanceof FailNode) {
-			return getFaileds();
-		} else if (currentNode instanceof DownloadingNode) {
-			return getDownloadings();
-		} else {
-			return resources;
-		}
-	}
+    public List<Resource> getResources(DownloadNode currentNode) {
+        if (currentNode instanceof FinishNode) {
+            return getFinisheds();
+        } else if (currentNode instanceof FailNode) {
+            return getFaileds();
+        } else if (currentNode instanceof DownloadingNode) {
+            return getDownloadings();
+        } else {
+            return resources;
+        }
+    }
 }

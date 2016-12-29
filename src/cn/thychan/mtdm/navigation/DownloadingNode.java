@@ -8,16 +8,15 @@ import javax.swing.*;
  */
 
 /**
- * æ­£åœ¨ä¸‹è½½çš„å¯¼èˆªèŠ‚ç‚¹
+ * ÕıÔÚÏÂÔØµÄµ¼º½½Úµã
  */
 public class DownloadingNode implements DownloadNode {
-
     public ImageIcon getImageIcon() {
         return ImageUtil.DOWNLOADING_NODE_IMAGE;
     }
 
     public String getText() {
-        return "æ­£åœ¨ä¸‹è½½";
+        return "ÕıÔÚÏÂÔØ";
     }
 
 }

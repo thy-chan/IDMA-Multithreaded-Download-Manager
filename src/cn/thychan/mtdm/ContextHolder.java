@@ -6,9 +6,9 @@ import cn.thychan.mtdm.thread.DownloadHandler;
  * Created by cn_cx on 2016/12/8.
  */
 public class ContextHolder {
-	//ä¸‹è½½å·¥å…·ä¸Šä¸‹æ–‡
-	public static DownloadContext ctx = new DownloadContext();
-	//ä¸‹è½½å¤„ç†ç±»
-	public static DownloadHandler dh = new DownloadHandler();
+    //ÏÂÔØ¹¤¾ßÉÏÏÂÎÄ
+    public static DownloadContext ctx = new DownloadContext();
+    //ÏÂÔØ´¦ÀíÀà
+    public static DownloadHandler dh = new DownloadHandler();
 }
 

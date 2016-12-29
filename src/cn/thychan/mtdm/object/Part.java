@@ -8,59 +8,56 @@ import java.util.UUID;
  */
 
 /**
- * ä¸‹è½½æ–‡ä»¶æ‹†åˆ†çš„å—
+ * ÏÂÔØÎÄ¼ş²ğ·ÖµÄ¿é
  */
 public class Part implements Serializable {
 
-	//ä¸‹è½½çš„å¼€å§‹ä½ç½®
-	private int begin;
-	//è¿™ä¸ªpartæ–‡ä»¶çš„é•¿åº¦
-	private int length;
-	//å·²ç»ä¸‹è½½çš„æ–‡ä»¶é•¿åº¦
-	private int currentLength;
-	//æ¯ä¸ªPartå¯¹åº”çš„æ–‡ä»¶
-	private String partName;
+    //ÏÂÔØµÄ¿ªÊ¼Î»ÖÃ
+    private int begin;
+    //Õâ¸öpartÎÄ¼şµÄ³¤¶È
+    private int length;
+    //ÒÑ¾­ÏÂÔØµÄÎÄ¼ş³¤¶È
+    private int currentLength;
+    //Ã¿¸öPart¶ÔÓ¦µÄÎÄ¼ş
+    private String partName;
 
-	public Part(int begin, int length, int currentLength) {
-		this.begin = begin;
-		this.length = length;
-		this.currentLength = currentLength;
-		this.partName = UUID.randomUUID() + ".part";
-	}
+    public Part(int begin, int length, int currentLength) {
+        this.begin = begin;
+        this.length = length;
+        this.currentLength = currentLength;
+        this.partName = UUID.randomUUID() + ".part";
+    }
 
-	public int getBegin() {
-		return begin;
-	}
+    public int getBegin() {
+        return begin;
+    }
 
-	public void setBegin(int begin) {
-		this.begin = begin;
-	}
+    public void setBegin(int begin) {
+        this.begin = begin;
+    }
 
-	public int getLength() {
-		return length;
-	}
+    public int getLength() {
+        return length;
+    }
 
-	public void setLength(int length) {
-		this.length = length;
-	}
+    public void setLength(int length) {
+        this.length = length;
+    }
 
-	public int getCurrentLength() {
-		return currentLength;
-	}
+    public int getCurrentLength() {
+        return currentLength;
+    }
 
-	public  void setCurrentLength(int currentLength) {
-		this.currentLength = currentLength;
-	}
+    public  void setCurrentLength(int currentLength) {
+        this.currentLength = currentLength;
+    }
 
-	public String getPartName() {
-		return partName;
-	}
+    public String getPartName() {
+        return partName;
+    }
 
-	public void setPartName(String partName) {
-		this.partName = partName;
-	}
-
-
-
+    public void setPartName(String partName) {
+        this.partName = partName;
+    }
 }
 

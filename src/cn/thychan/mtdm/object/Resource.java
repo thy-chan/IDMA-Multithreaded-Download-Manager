@@ -20,200 +20,200 @@ import java.util.UUID;
 
 public class Resource implements Serializable {
 
-	//æ ‡è¯†è¯¥èµ„æºçš„id
-	private String id;
-	//èµ„æºåœ°å€
-	private String url;
-	//èµ„æºä¿å­˜è·¯å¾„
-	private String filePath;
-	//èµ„æºä¸‹è½½åçš„åç§°
-	private String fileName;
-	//èµ„æºåç§°
-	private String sourceName;
-	//èµ„æºä¸‹è½½åçš„æ–‡ä»¶å¯¹è±¡
-	private File saveFile;
-	//çŠ¶æ€
-	private TaskState state;
-	//æ–‡ä»¶å¤§å°
-	private int size = -1;
-	//ä¸‹è½½æ—¥æœŸ
-	private Date downloadDate;
-	//è¿›åº¦
-	private float progress;
-	//ä¸‹è½½é€Ÿåº¦
-	private float speed;
-	//ä½¿ç”¨çš„æ—¶é—´
-	private int costTime;
-	//å‰©ä¸‹çš„æ—¶é—´
-	private int spareTime;
-	//æ–‡ä»¶æ‰€æ‹†åˆ†çš„å—
-	private List<Part> parts;
-	//ä¸‹è½½çš„çº¿ç¨‹æ•°
-	private int threadSize;
-	//ä¸Šä¸€æ¬¡ä¸‹è½½çš„å¤§å°
-	private int preLength;
+    //±êÊ¶¸Ã×ÊÔ´µÄid
+    private String id;
+    //×ÊÔ´µØÖ·
+    private String url;
+    //×ÊÔ´±£´æÂ·¾¶
+    private String filePath;
+    //×ÊÔ´ÏÂÔØºóµÄÃû³Æ
+    private String fileName;
+    //×ÊÔ´Ãû³Æ
+    private String sourceName;
+    //×ÊÔ´ÏÂÔØºóµÄÎÄ¼ş¶ÔÏó
+    private File saveFile;
+    //×´Ì¬
+    private TaskState state;
+    //ÎÄ¼ş´óĞ¡
+    private int size = -1;
+    //ÏÂÔØÈÕÆÚ
+    private Date downloadDate;
+    //½ø¶È
+    private float progress;
+    //ÏÂÔØËÙ¶È
+    private float speed;
+    //Ê¹ÓÃµÄÊ±¼ä
+    private int costTime;
+    //Ê£ÏÂµÄÊ±¼ä
+    private int spareTime;
+    //ÎÄ¼şËù²ğ·ÖµÄ¿é
+    private List<Part> parts;
+    //ÏÂÔØµÄÏß³ÌÊı
+    private int threadSize;
+    //ÉÏÒ»´ÎÏÂÔØµÄ´óĞ¡
+    private int preLength;
 
-	public Resource(String url, String filePath, String fileName, int threadSize) {
-		this.id = UUID.randomUUID().toString();
-		this.url = url;
-		this.filePath = filePath;
-		this.fileName = fileName;
-		this.parts = new ArrayList<Part>();
-		this.saveFile = new File(filePath + File.separator + fileName);
-		this.state = DownloadContext.CONNECTION;
-		this.threadSize = threadSize;
-	}
+    public Resource(String url, String filePath, String fileName, int threadSize) {
+        this.id = UUID.randomUUID().toString();
+        this.url = url;
+        this.filePath = filePath;
+        this.fileName = fileName;
+        this.parts = new ArrayList<Part>();
+        this.saveFile = new File(filePath + File.separator + fileName);
+        this.state = DownloadContext.CONNECTION;
+        this.threadSize = threadSize;
+    }
 
-	public String getId() {
-		return this.id;
-	}
+    public String getId() {
+        return this.id;
+    }
 
-	public String getSourceName() {
-		this.sourceName = FileUtil.getFileName(this.url);
-		return this.sourceName;
-	}
+    public String getSourceName() {
+        this.sourceName = FileUtil.getFileName(this.url);
+        return this.sourceName;
+    }
 
-	public int getThreadSize() {
-		return threadSize;
-	}
+    public int getThreadSize() {
+        return threadSize;
+    }
 
-	public void setThreadSize(int threadSize) {
-		this.threadSize = threadSize;
-	}
+    public void setThreadSize(int threadSize) {
+        this.threadSize = threadSize;
+    }
 
-	public File getSaveFile() {
-		return this.saveFile;
-	}
+    public File getSaveFile() {
+        return this.saveFile;
+    }
 
-	public String getFileName() {
-		return fileName;
-	}
+    public String getFileName() {
+        return fileName;
+    }
 
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
-	public TaskState getState() {
-		return state;
-	}
+    public TaskState getState() {
+        return state;
+    }
 
-	public void setState(TaskState state) {
-		if (this.state != null) {
-			//åˆ¤æ–­å‚æ•°çš„çŠ¶æ€ä¸æœ¬å¯¹è±¡çš„çŠ¶æ€æ˜¯å¦ä¸€è‡´
-			if (!this.state.equals(state)) {
-				//ä¸¤ä¸ªçŠ¶æ€ä¸€è‡´, ä¸éœ€è¦è¿›è¡Œä»»ä½•åŠ¨ä½œ, ä¸ä¸€è‡´, æ‰§è¡Œè¯¥çŠ¶æ€çš„æ–¹æ³•
-				//æ‰§è¡ŒåŸæ¥çŠ¶æ€çš„é”€æ¯æ–¹æ³•
-				this.state.destory(this);
-				//æ‰§è¡Œæ–°çŠ¶æ€çš„initæ–¹æ³•
-				state.init(this);
-			}
-		}
-		this.state = state;
-	}
+    public void setState(TaskState state) {
+        if (this.state != null) {
+            //ÅĞ¶Ï²ÎÊıµÄ×´Ì¬Óë±¾¶ÔÏóµÄ×´Ì¬ÊÇ·ñÒ»ÖÂ
+            if (!this.state.equals(state)) {
+                //Á½¸ö×´Ì¬Ò»ÖÂ, ²»ĞèÒª½øĞĞÈÎºÎ¶¯×÷, ²»Ò»ÖÂ, Ö´ĞĞ¸Ã×´Ì¬µÄ·½·¨
+                //Ö´ĞĞÔ­À´×´Ì¬µÄÏú»Ù·½·¨
+                this.state.destory(this);
+                //Ö´ĞĞĞÂ×´Ì¬µÄinit·½·¨
+                state.init(this);
+            }
+        }
+        this.state = state;
+    }
 
-	/**
-	 * è¿”å›æ–‡ä»¶å¤§å°
-	 */
-	public int getSize() {
-		try {
-			//è¿›è¡Œä¸€æ¬¡æ–‡ä»¶è¿æ¥
-			URL resourceURL = new URL(this.url);
-			//åˆ¤æ–­ä¹‹å‰æ˜¯å¦å·²ç»å–è¿‡æ–‡ä»¶å¤§å°
-			if (this.size == -1) {
-				HttpURLConnection urlConnection = (HttpURLConnection)resourceURL.openConnection();
-				urlConnection.connect();
-				this.size = urlConnection.getContentLength();
-				//å–å¾—æ–‡ä»¶å¤§å°åè¿”å›
-				urlConnection.disconnect();
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return this.size;
-	}
+    /**
+     * ·µ»ØÎÄ¼ş´óĞ¡
+     */
+    public int getSize() {
+        try {
+            //½øĞĞÒ»´ÎÎÄ¼şÁ¬½Ó
+            URL resourceURL = new URL(this.url);
+            //ÅĞ¶ÏÖ®Ç°ÊÇ·ñÒÑ¾­È¡¹ıÎÄ¼ş´óĞ¡
+            if (this.size == -1) {
+                HttpURLConnection urlConnection = (HttpURLConnection)resourceURL.openConnection();
+                urlConnection.connect();
+                this.size = urlConnection.getContentLength();
+                //È¡µÃÎÄ¼ş´óĞ¡ºó·µ»Ø
+                urlConnection.disconnect();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return this.size;
+    }
 
-	public Date getDownloadDate() {
-		return downloadDate;
-	}
+    public Date getDownloadDate() {
+        return downloadDate;
+    }
 
-	public void setDownloadDate(Date downloadDate) {
-		this.downloadDate = downloadDate;
-	}
+    public void setDownloadDate(Date downloadDate) {
+        this.downloadDate = downloadDate;
+    }
 
-	public float getProgress() {
-		this.progress = Math.round(100.0f * getCurrentLength() / getSize());
-		return progress;
-	}
+    public float getProgress() {
+        this.progress = Math.round(100.0f * getCurrentLength() / getSize());
+        return progress;
+    }
 
-	/**
-	 * è¿”å›ä¸‹è½½é€Ÿåº¦, éœ€è¦å¾—åˆ°å…¨éƒ¨å·²ä¸‹è½½çš„é•¿åº¦
-	 */
-	public float getSpeed() {
-		//å¾—åˆ°å½“å‰æ‰€æœ‰å—ä¸‹è½½çš„å¤§å°
-		int currentLength = getCurrentLength();
-		//å°†å½“å‰ä¸‹è½½çš„é•¿åº¦å‡å»å‰ä¸€æ¬¡ä¸‹è½½çš„é•¿åº¦, å¾—åˆ°æ€»ä¸‹è½½é‡å¹¶è®¡ç®—å‡ºé€Ÿåº¦
-		speed = (currentLength - preLength) / 1024.0f;
-		//å°†å½“å‰ä¸‹è½½çš„é•¿åº¦è®¾ç½®ä¸ºå‰ä¸€æ¬¡ä¸‹è½½çš„é•¿åº¦(æœ¬æ¬¡é€Ÿåº¦è®¡ç®—å·²ç»å®Œæˆ)
-		preLength = currentLength;
-		speed = Math.round(speed * 100) / 100.0f;
-		return speed;
-	}
+    /**
+     * ·µ»ØÏÂÔØËÙ¶È, ĞèÒªµÃµ½È«²¿ÒÑÏÂÔØµÄ³¤¶È
+     */
+    public float getSpeed() {
+        //µÃµ½µ±Ç°ËùÓĞ¿éÏÂÔØµÄ´óĞ¡
+        int currentLength = getCurrentLength();
+        //½«µ±Ç°ÏÂÔØµÄ³¤¶È¼õÈ¥Ç°Ò»´ÎÏÂÔØµÄ³¤¶È, µÃµ½×ÜÏÂÔØÁ¿²¢¼ÆËã³öËÙ¶È
+        speed = (currentLength - preLength) / 1024.0f;
+        //½«µ±Ç°ÏÂÔØµÄ³¤¶ÈÉèÖÃÎªÇ°Ò»´ÎÏÂÔØµÄ³¤¶È(±¾´ÎËÙ¶È¼ÆËãÒÑ¾­Íê³É)
+        preLength = currentLength;
+        speed = Math.round(speed * 100) / 100.0f;
+        return speed;
+    }
 
-	/**
-	 * å¾—åˆ°è¯¥èµ„æºå·²ç»ä¸‹è½½çš„é•¿åº¦(è®¡ç®—æ‰€æœ‰å—çš„é•¿åº¦)
-	 */
-	public int getCurrentLength() {
-		int result = 0;
-		for (Part p : this.parts) {
-			result += p.getCurrentLength();
-		}
-		return result;
-	}
+    /**
+     * µÃµ½¸Ã×ÊÔ´ÒÑ¾­ÏÂÔØµÄ³¤¶È(¼ÆËãËùÓĞ¿éµÄ³¤¶È)
+     */
+    public int getCurrentLength() {
+        int result = 0;
+        for (Part p : this.parts) {
+            result += p.getCurrentLength();
+        }
+        return result;
+    }
 
-	public void setSpeed(float speed) {
-		this.speed = speed;
-	}
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
 
-	public int getCostTime() {
-		return this.costTime;
-	}
+    public int getCostTime() {
+        return this.costTime;
+    }
 
-	public void setCostTime(int costTime) {
-		this.costTime = costTime;
-	}
+    public void setCostTime(int costTime) {
+        this.costTime = costTime;
+    }
 
-	public int getSpareTime() {
-		//å¾—åˆ°å‰©ä½™é•¿åº¦
-		int spareSize = getSize() - getCurrentLength();
-		if (this.speed == 0) return this.spareTime;
-		return (spareSize / (int)this.speed) / 1000;
-	}
+    public int getSpareTime() {
+        //µÃµ½Ê£Óà³¤¶È
+        int spareSize = getSize() - getCurrentLength();
+        if (this.speed == 0) return this.spareTime;
+        return (spareSize / (int)this.speed) / 1000;
+    }
 
-	public Icon getStateIcon() {
-		return state.getIcon();
-	}
+    public Icon getStateIcon() {
+        return state.getIcon();
+    }
 
-	public String getUrl() {
-		return url;
-	}
+    public String getUrl() {
+        return url;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-	public String getFilePath() {
-		return filePath;
-	}
+    public String getFilePath() {
+        return filePath;
+    }
 
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
-	}
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
+    }
 
-	public List<Part> getParts() {
-		return parts;
-	}
+    public List<Part> getParts() {
+        return parts;
+    }
 
-	public void setParts(List<Part> parts) {
-		this.parts = parts;
-	}
+    public void setParts(List<Part> parts) {
+        this.parts = parts;
+    }
 }

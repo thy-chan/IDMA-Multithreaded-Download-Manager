@@ -9,15 +9,15 @@ import javax.swing.*;
  */
 
 /**
- * 鍏ㄩ儴涓嬭浇璧勬簮(浠诲姟)鑺傜偣
+ * 全部下载资源(任务)节点
  */
 public class TaskNode implements DownloadNode {
 
-	public ImageIcon getImageIcon() {
-		return ImageUtil.TASK_NODE_IMAGE;
-	}
+    public ImageIcon getImageIcon() {
+        return ImageUtil.TASK_NODE_IMAGE;
+    }
 
-	public String getText() {
-		return "浠诲姟";
-	}
+    public String getText() {
+        return "任务";
+    }
 }

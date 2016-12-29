@@ -12,36 +12,36 @@ import java.util.List;
  */
 public class FileUtil {
 
-	public final static File SERIALIZABLE_FILE = new File("serializable.txt");
+    public final static File SERIALIZABLE_FILE = new File("serializable.txt");
 
-	/**
-	 * åˆ é™¤è¯¥ä¸‹è½½æ–‡ä»¶çš„.partæ–‡ä»¶,
-	 */
-	public static void deletePartFiles(Resource resource) {
-		List<Part> parts = resource.getParts();
-		for (Part part : parts) {
-			File partFile = new File(getPartFilePath(resource, part));
-			if (!partFile.exists()) continue;
-			//åªè¦æœ‰ä¸€ä»½æ–‡ä»¶åˆ é™¤å¤±è´¥, å†é€’å½’åˆ é™¤, ç›´åˆ°å¯ä»¥åˆ é™¤ä¸ºæ­¢
-			if (partFile.delete() == false) {
-				deletePartFiles(resource);
-			}
-		}
-	}
+    /**
+     * É¾³ı¸ÃÏÂÔØÎÄ¼şµÄ.partÎÄ¼ş,
+     */
+    public static void deletePartFiles(Resource resource) {
+        List<Part> parts = resource.getParts();
+        for (Part part : parts) {
+            File partFile = new File(getPartFilePath(resource, part));
+            if (!partFile.exists()) continue;
+            //Ö»ÒªÓĞÒ»·İÎÄ¼şÉ¾³ıÊ§°Ü, ÔÙµİ¹éÉ¾³ı, Ö±µ½¿ÉÒÔÉ¾³ıÎªÖ¹
+            if (partFile.delete() == false) {
+                deletePartFiles(resource);
+            }
+        }
+    }
 
-	public static String getFileName(String address) {
-		if (address.indexOf("/") != -1) {
-			return address.substring(address.lastIndexOf("/") + 1,
-					address.length());
-		}
-		return null;
-	}
+    public static String getFileName(String address) {
+        if (address.indexOf("/") != -1) {
+            return address.substring(address.lastIndexOf("/") + 1,
+                    address.length());
+        }
+        return null;
+    }
 
-	/**
-	 * å¾—åˆ°.partæ–‡ä»¶çš„ç»å¯¹è·¯å¾„
-	 */
-	public static String getPartFilePath(Resource resource, Part part) {
-		return resource.getFilePath() + File.separator + part.getPartName();
-	}
+    /**
+     * µÃµ½.partÎÄ¼şµÄ¾ø¶ÔÂ·¾¶
+     */
+    public static String getPartFilePath(Resource resource, Part part) {
+        return resource.getFilePath() + File.separator + part.getPartName();
+    }
 }
 

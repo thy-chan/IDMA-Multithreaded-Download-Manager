@@ -8,117 +8,117 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 
 /**
- * æ‚¬æµ®çª—å£
+ * Ğü¸¡´°¿Ú
  */
 public class SuspendWindow extends JWindow {
 
-	private BufferedImage img = ImageUtil.getImage(ImageUtil.SUSPEND_IMAGE_PATH);
+    private BufferedImage img = ImageUtil.getImage(ImageUtil.SUSPEND_IMAGE_PATH);
 
-	//é¼ æ ‡åœ¨æ‚¬æµ®çª—ä¸­çš„åæ ‡
-	private int x;
-	private int y;
+    //Êó±êÔÚĞü¸¡´°ÖĞµÄ×ø±ê
+    private int x;
+    private int y;
 
-	private JPopupMenu popupMenu = new JPopupMenu();
+    private JPopupMenu popupMenu = new JPopupMenu();
 
-	private JMenuItem openItem = new JMenuItem("æ‰“å¼€/å…³é—­ä¸»çª—å£", ImageUtil.SUSPEND_OPEN_IAMGE);
-	private JMenuItem newItem = new JMenuItem("æ–°å»ºä¸‹è½½ä»»åŠ¡", ImageUtil.SUSPEND_NEW_IAMGE);
-	private JMenuItem startItem = new JMenuItem("å¼€å§‹å…¨éƒ¨ä»»åŠ¡", ImageUtil.SUSPEND_START_IAMGE);
-	private JMenuItem pauseItem = new JMenuItem("æš‚åœå…¨éƒ¨ä»»åŠ¡", ImageUtil.SUSPEND_PAUSE_IAMGE);
-	private JMenuItem removeItem = new JMenuItem("åˆ é™¤å®Œæˆä»»åŠ¡", ImageUtil.SUSPEND_REMOVE_IAMGE);
-	private JMenuItem quitItem = new JMenuItem("é€€å‡º", ImageUtil.SUSPEND_QUIT_IAMGE);
+    private JMenuItem openItem = new JMenuItem("´ò¿ª/¹Ø±ÕÖ÷´°¿Ú", ImageUtil.SUSPEND_OPEN_IAMGE);
+    private JMenuItem newItem = new JMenuItem("ĞÂ½¨ÏÂÔØÈÎÎñ", ImageUtil.SUSPEND_NEW_IAMGE);
+    private JMenuItem startItem = new JMenuItem("¿ªÊ¼È«²¿ÈÎÎñ", ImageUtil.SUSPEND_START_IAMGE);
+    private JMenuItem pauseItem = new JMenuItem("ÔİÍ£È«²¿ÈÎÎñ", ImageUtil.SUSPEND_PAUSE_IAMGE);
+    private JMenuItem removeItem = new JMenuItem("É¾³ıÍê³ÉÈÎÎñ", ImageUtil.SUSPEND_REMOVE_IAMGE);
+    private JMenuItem quitItem = new JMenuItem("ÍË³ö", ImageUtil.SUSPEND_QUIT_IAMGE);
 
-	private MainFrame mainFrame;
+    private MainFrame mainFrame;
 
-	public SuspendWindow(MainFrame mainFrame) {
-		this.mainFrame = mainFrame;
-		Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		createPopupMenu();
-		this.setSize(60, 60);
-		int locationX = screen.width - screen.width / 10;
-		int locationY = screen.height - (int)(screen.height / 1.06);
-		this.setLocation(locationX, locationY);
-		this.setAlwaysOnTop(true);
-		this.setVisible(true);
-		initListeners();
-	}
+    public SuspendWindow(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
+        Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
+        createPopupMenu();
+        this.setSize(60, 60);
+        int locationX = screen.width - screen.width / 10;
+        int locationY = screen.height - (int)(screen.height / 1.06);
+        this.setLocation(locationX, locationY);
+        this.setAlwaysOnTop(true);
+        this.setVisible(true);
+        initListeners();
+    }
 
-	private void createPopupMenu() {
-		this.popupMenu.add(this.openItem);
-		this.popupMenu.addSeparator();
-		this.popupMenu.add(this.newItem);
-		this.popupMenu.add(this.removeItem);
-		this.popupMenu.addSeparator();
-		this.popupMenu.add(this.startItem);
-		this.popupMenu.add(this.pauseItem);
-		this.popupMenu.addSeparator();
-		this.popupMenu.add(this.quitItem);
-		this.openItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				if (mainFrame.isVisible()) {
-					mainFrame.setVisible(false);
-				} else {
-					mainFrame.setVisible(true);
-				}
-			}
-		});
-		this.newItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				mainFrame.getNewTaskFrame().setVisible(true);
-			}
-		});
-		this.startItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				mainFrame.startAllTask();
-			}
-		});
-		this.pauseItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				mainFrame.pauseAllTask();
-			}
-		});
-		this.removeItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				mainFrame.deleteFinished();
-			}
-		});
-		this.quitItem.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				mainFrame.serializable();
-				System.exit(0);
-			}
-		});
-	}
+    private void createPopupMenu() {
+        this.popupMenu.add(this.openItem);
+        this.popupMenu.addSeparator();
+        this.popupMenu.add(this.newItem);
+        this.popupMenu.add(this.removeItem);
+        this.popupMenu.addSeparator();
+        this.popupMenu.add(this.startItem);
+        this.popupMenu.add(this.pauseItem);
+        this.popupMenu.addSeparator();
+        this.popupMenu.add(this.quitItem);
+        this.openItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                if (mainFrame.isVisible()) {
+                    mainFrame.setVisible(false);
+                } else {
+                    mainFrame.setVisible(true);
+                }
+            }
+        });
+        this.newItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainFrame.getNewTaskFrame().setVisible(true);
+            }
+        });
+        this.startItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainFrame.startAllTask();
+            }
+        });
+        this.pauseItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainFrame.pauseAllTask();
+            }
+        });
+        this.removeItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainFrame.deleteFinished();
+            }
+        });
+        this.quitItem.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent arg0) {
+                mainFrame.serializable();
+                System.exit(0);
+            }
+        });
+    }
 
-	private void initListeners() {
-		this.addMouseMotionListener(new MouseMotionAdapter() {
-			public void mouseDragged(MouseEvent e) {
-				//è·å¾—å½“å‰é¼ æ ‡åœ¨å±å¹•ä¸­çš„åæ ‡
-				int xScreen = e.getXOnScreen();
-				int yScreen = e.getYOnScreen();
-				setLocation(xScreen - x, yScreen - y);
-			}
-		});
-		this.addMouseListener(new MouseAdapter() {
-			public void mousePressed(MouseEvent e) {
-				x = e.getX();
-				y = e.getY();
-			}
-			public void mouseReleased(MouseEvent e) {
-				if (e.isPopupTrigger()) {
-					popupMenu.show(SuspendWindow.this, e.getX(), e.getY());
-				}
-			}
-			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 2) {
-					mainFrame.setVisible(true);
-				}
-			}
-		});
-	}
+    private void initListeners() {
+        this.addMouseMotionListener(new MouseMotionAdapter() {
+            public void mouseDragged(MouseEvent e) {
+                //»ñµÃµ±Ç°Êó±êÔÚÆÁÄ»ÖĞµÄ×ø±ê
+                int xScreen = e.getXOnScreen();
+                int yScreen = e.getYOnScreen();
+                setLocation(xScreen - x, yScreen - y);
+            }
+        });
+        this.addMouseListener(new MouseAdapter() {
+            public void mousePressed(MouseEvent e) {
+                x = e.getX();
+                y = e.getY();
+            }
+            public void mouseReleased(MouseEvent e) {
+                if (e.isPopupTrigger()) {
+                    popupMenu.show(SuspendWindow.this, e.getX(), e.getY());
+                }
+            }
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2) {
+                    mainFrame.setVisible(true);
+                }
+            }
+        });
+    }
 
-	public void paint(Graphics g) {
-		g.drawImage(img, 0, 0, this);
-	}
+    public void paint(Graphics g) {
+        g.drawImage(img, 0, 0, this);
+    }
 
 
 }
