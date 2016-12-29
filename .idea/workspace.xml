@@ -6,36 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e56d6439-5735-49a1-a2ae-f83c182fb986" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/DownloadTable.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/DownloadTable.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$10.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$11.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$12.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$13.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$14.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$15.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$16.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$17.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$17.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$2.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$3.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$4.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$5.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$6.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$7.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$8.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$9.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/ImageUtil.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/ImageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/AboutDialog.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/AboutDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTable.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskDialog.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java" />
-    </list>
+    <list default="true" id="e56d6439-5735-49a1-a2ae-f83c182fb986" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,65 +44,11 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="181" column="21" lean-forward="false" selection-start-line="181" selection-start-column="21" selection-end-line="181" selection-end-column="21" />
+            <state relative-caret-position="169">
+              <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewTaskDialog.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageIcon.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Others/Java/jdk1.8.0_112/src.zip!/javax/swing/ImageIcon.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="216" column="0" lean-forward="false" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-              <folding>
-                <element signature="e#6758#6759#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SuspendWindow.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/SuspendWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DateUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/util/DateUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="7" column="3" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -139,8 +56,8 @@
       <file leaf-file-name="ImageUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1650">
-              <caret line="79" column="48" lean-forward="true" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+            <state relative-caret-position="524">
+              <caret line="79" column="48" lean-forward="false" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -209,86 +126,6 @@
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MTDM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.8 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MTDM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.8 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MTDM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.8 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javax" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MTDM" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="&lt; 1.8 &gt;" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rt.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javax" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swing" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="MTDM" />
@@ -942,12 +779,12 @@
       <updated>1482988977655</updated>
       <workItem from="1482988981884" duration="2662000" />
       <workItem from="1483002876432" duration="14226000" />
-      <workItem from="1483019324402" duration="5020000" />
+      <workItem from="1483019324402" duration="5954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21908000" />
+    <option name="totallyTimeSpent" value="22842000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
@@ -1002,40 +839,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadProgressBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/SuspendWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2596">
-          <caret line="118" column="33" lean-forward="true" selection-start-line="118" selection-start-column="33" selection-end-line="118" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/thread/DownloadThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -1414,18 +1217,38 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/icon/chan.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/icon/chan.gif">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/icon/chan.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/icon/chan.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1650">
-          <caret line="79" column="48" lean-forward="true" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
+        <state relative-caret-position="524">
+          <caret line="79" column="48" lean-forward="false" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="181" column="21" lean-forward="false" selection-start-line="181" selection-start-column="21" selection-end-line="181" selection-end-column="21" />
+        <state relative-caret-position="169">
+          <caret line="184" column="0" lean-forward="true" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

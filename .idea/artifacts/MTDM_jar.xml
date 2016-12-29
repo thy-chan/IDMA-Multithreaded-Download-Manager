@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MTDM:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MTDM_jar</output-path>
+    <root id="archive" name="MTDM.jar">
+      <element id="module-output" name="MTDM" />
+    </root>
+  </artifact>
+</component>
