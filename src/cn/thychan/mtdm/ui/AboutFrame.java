@@ -13,7 +13,7 @@ public class AboutFrame extends JFrame {
     private JLabel author = new JLabel("Author: ThyChan");
     private JLabel blog = new JLabel("Blog: http://thychan.cn");
     private JLabel github = new JLabel("GitHub: https://github.com/thy-chan");
-    private JLabel email = new JLabel("email: cn_cx@foxmail.com");
+    private JLabel email = new JLabel("Email: cn_cx@foxmail.com");
 
     //按钮
     private JButton confirmButton = new JButton("确定");
@@ -44,7 +44,7 @@ public class AboutFrame extends JFrame {
 
         this.add(mainBox);
         this.setTitle("About");
-        this.pack();
+        this.setSize(400,200);
         //初始化按钮监听器
         initLinsteners();
     }
