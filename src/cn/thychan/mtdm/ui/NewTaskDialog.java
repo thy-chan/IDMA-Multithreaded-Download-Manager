@@ -87,12 +87,16 @@ public class NewTaskDialog extends JDialog {
             @Override
             public void focusGained(FocusEvent e)
             {
-                saveFileName.setText("");
+                if(saveFileName.getText().equals(MSG)){
+                    saveFileName.setText("");
+                }
             }
             @Override
             public void focusLost(FocusEvent e)
             {
-                saveFileName.setText(MSG);
+                if(saveFileName.getText().equals("")){
+                    saveFileName.setText(MSG);
+                }
             }
         });
         //setLocationRelativeTo(null);
