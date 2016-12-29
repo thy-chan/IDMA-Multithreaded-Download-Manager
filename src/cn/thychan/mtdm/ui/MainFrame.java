@@ -67,40 +67,40 @@ public class MainFrame extends JFrame {
     private Info downloadDate = new Info(DOWNLOAD_DATE_TEXT);
     private Info info = new Info(RESOURCE_INFO_TEXT);
 
-    private Action newTask = new AbstractAction("新任务", new ImageIcon("images/tool/new_task.png")) {
+    private JButton newTask = create(new AbstractAction("新任务", new ImageIcon("images/tool/new_task.png")) {
         public void actionPerformed(ActionEvent e) {
             newTask();
         }
-    };
-    private Action start = new AbstractAction("开始", new ImageIcon("images/tool/begin.png")) {
+    });
+    private JButton start = create(new AbstractAction("开始", new ImageIcon("images/tool/begin.png")) {
         public void actionPerformed(ActionEvent e) {
             start();
         }
-    };
+    });
 
-    private Action pause = new AbstractAction("暂停", new ImageIcon("images/tool/pause.png")) {
+    private JButton pause = create(new AbstractAction("暂停", new ImageIcon("images/tool/pause.png")) {
         public void actionPerformed(ActionEvent e) {
             pause();
         }
-    };
+    });
 
-    private Action delete = new AbstractAction("删除任务", new ImageIcon("images/tool/delete.png")) {
+    private JButton delete = create(new AbstractAction("删除任务", new ImageIcon("images/tool/delete.png")) {
         public void actionPerformed(ActionEvent e) {
             delete();
         }
-    };
+    });
 
-    private Action deleteFinished = new AbstractAction("移除任务", new ImageIcon("images/tool/remove.png")) {
+    private JButton deleteFinished = create(new AbstractAction("移除任务", new ImageIcon("images/tool/remove.png")) {
         public void actionPerformed(ActionEvent e) {
             deleteFinished();
         }
-    };
+    });
 
-    private Action about = new AbstractAction("关于", new ImageIcon("images/tool/about.png")) {
+    private JButton about = create(new AbstractAction("关 于", new ImageIcon("images/tool/about.png")) {
         public void actionPerformed(ActionEvent e) {
             about();
         }
-    };
+    });
 
     ActionListener refreshTable = new ActionListener() {
         public void actionPerformed(ActionEvent e) {
@@ -108,6 +108,18 @@ public class MainFrame extends JFrame {
             downloadTable.updateUI();
         }
     };
+
+    /**
+     * 创建JButton
+     * @param action
+     * @return
+     */
+    static JButton create(Action action) {
+        JButton button = new JButton(action);
+        button.setVerticalTextPosition(JButton.BOTTOM);
+        button.setHorizontalTextPosition(JButton.CENTER);
+        return button;
+    }
 
     //悬浮窗口
     private SuspendWindow suspendWindow;
@@ -172,6 +184,8 @@ public class MainFrame extends JFrame {
         //读取序列化文件
         reverseSer();
     }
+
+
 
     public NewTaskFrame getNewTaskFrame() {
         return this.taskFrame;
@@ -366,14 +380,14 @@ public class MainFrame extends JFrame {
 
     private void createToolBar() {
         this.toolBar.setFloatable(false);
-        this.toolBar.add(this.newTask).setToolTipText("添加任务");
-        this.toolBar.add(this.start).setToolTipText("开始任务");
-        this.toolBar.add(this.pause).setToolTipText("暂停");
-        this.toolBar.add(this.delete).setToolTipText("删除");
-        this.toolBar.add(this.deleteFinished).setToolTipText("移除已完成的任务");
-        this.toolBar.add(this.about).setToolTipText("关于");
+        this.toolBar.add(this.newTask);
+        this.toolBar.add(this.start);
+        this.toolBar.add(this.pause);
+        this.toolBar.add(this.delete);
+        this.toolBar.add(this.deleteFinished);
+        this.toolBar.add(this.about);
 
-        this.toolBar.setMargin(new Insets(5, 10, 5, 5));
+        this.toolBar.setMargin(new Insets(4, 10, 5, 10));
         this.add(this.toolBar, BorderLayout.NORTH);
 
     }
