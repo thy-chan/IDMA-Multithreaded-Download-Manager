@@ -11,12 +11,16 @@ import javax.swing.event.DocumentListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 import java.io.File;
 
 /**
  * Created by cn_cx on 2016/12/8.
  */
 public class NewTaskDialog extends JDialog {
+
+    private static final String MSG = "请注意所需下载资源的扩展名格式, 否则会导致失败!";
 
     //下载地址
     private JLabel addressLabel = new JLabel("下载地址: ");
@@ -66,6 +70,9 @@ public class NewTaskDialog extends JDialog {
         targetBox.add(Box.createHorizontalStrut(20));
         targetBox.add(this.target);
         targetBox.add(Box.createHorizontalStrut(50));
+        targetBox.add(this.targetSelectButton);
+        targetBox.add(Box.createHorizontalStrut(50));
+
         //另存文件名和目录选择按钮
         Box selectFolderBox = Box.createHorizontalBox();
         selectFolderBox.add(Box.createHorizontalStrut(50));
@@ -73,8 +80,23 @@ public class NewTaskDialog extends JDialog {
         selectFolderBox.add(Box.createHorizontalStrut(7));
         selectFolderBox.add(this.saveFileName);
         selectFolderBox.add(Box.createHorizontalStrut(50));
-        selectFolderBox.add(this.targetSelectButton);
-        selectFolderBox.add(Box.createHorizontalStrut(50));
+
+        saveFileName.setText(MSG);
+        saveFileName.addFocusListener(new FocusAdapter()
+        {
+            @Override
+            public void focusGained(FocusEvent e)
+            {
+                saveFileName.setText("");
+            }
+            @Override
+            public void focusLost(FocusEvent e)
+            {
+                saveFileName.setText(MSG);
+            }
+        });
+        //setLocationRelativeTo(null);
+
         //线程选择
         Box threadBox = Box.createHorizontalBox();
         threadBox.add(Box.createHorizontalStrut(50));

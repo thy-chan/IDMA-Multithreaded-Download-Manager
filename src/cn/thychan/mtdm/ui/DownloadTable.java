@@ -54,8 +54,8 @@ public class DownloadTable extends JTable {
                 new DownloadTableCellRenderer());
         this.getColumn(DownloadTableModel.SPARE_TIME_COLUMN).setCellRenderer(
                 new DownloadTableCellRenderer());
-        //去掉表格的线
-        setShowVerticalLines(false);
+        //显示表格的线
+        setShowVerticalLines(true);
     }
 
     public boolean isCellEditable(int row, int column) {

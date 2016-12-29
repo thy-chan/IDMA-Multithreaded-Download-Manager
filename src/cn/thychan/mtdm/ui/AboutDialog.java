@@ -10,41 +10,41 @@ import java.awt.event.ActionListener;
  */
 public class AboutDialog extends JDialog {
     //提示的JLabel
-    private JLabel author = new JLabel("Author: ThyChan");
-    private JLabel blog = new JLabel("Blog: http://thychan.cn");
-    private JLabel github = new JLabel("GitHub: https://github.com/thy-chan");
-    private JLabel email = new JLabel("Email: cn_cx@foxmail.com");
+    private JLabel about = new JLabel("MTDM(Multi-threaded Download Manager)");
+    private JLabel author = new JLabel("Author:   ThyChan");
+    private JLabel blog = new JLabel("Blog:       http://thychan.cn");
+    private JLabel github = new JLabel("GitHub:   https://github.com/thy-chan");
+    private JLabel email = new JLabel("Email:     cn_cx@foxmail.com");
 
     //按钮
     private JButton confirmButton = new JButton("确定");
 
     public AboutDialog() {
         //信息提示的JLabel
-        Box warnBox = Box.createVerticalBox();
-        warnBox.add(this.author);
-        warnBox.add(this.blog);
-        warnBox.add(this.github);
-        warnBox.add(this.email);
+        Box aboutBox = Box.createVerticalBox();
+        aboutBox.add(this.about);
+        aboutBox.add(this.author);
+        aboutBox.add(this.blog);
+        aboutBox.add(this.github);
+        aboutBox.add(this.email);
         //按钮Box
         Box buttonBox = Box.createHorizontalBox();
-        buttonBox.add(Box.createHorizontalStrut(70));
+        buttonBox.add(Box.createHorizontalStrut(120));
         buttonBox.add(this.confirmButton);
         //主布局Box
         Box mainBox = Box.createVerticalBox();
-        mainBox.add(Box.createVerticalStrut(10));
-        mainBox.add(warnBox);
-        mainBox.add(Box.createVerticalStrut(10));
-
-        mainBox.add(Box.createVerticalStrut(20));
+        mainBox.add(Box.createVerticalStrut(25));
+        mainBox.add(aboutBox);
+        mainBox.add(Box.createVerticalStrut(25));
         mainBox.add(buttonBox);
-        mainBox.add(Box.createVerticalStrut(20));
+        mainBox.add(Box.createVerticalStrut(25));
         //得到屏幕大小
         Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(screen.width/3+10, screen.height/3+10);
+        this.setLocation((int)(screen.width/2.5), (int)(screen.height/2.5));
 
         this.add(mainBox);
-        this.setTitle("About");
-        this.setSize(320,200);
+        this.setTitle(" 关于");
+        this.pack();
         this.setResizable(false);
         this.setModal(true);
         //初始化按钮监听器

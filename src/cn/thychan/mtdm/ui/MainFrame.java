@@ -67,36 +67,43 @@ public class MainFrame extends JFrame {
     private Info downloadDate = new Info(DOWNLOAD_DATE_TEXT);
     private Info info = new Info(RESOURCE_INFO_TEXT);
 
-    private JButton newTask = create(new AbstractAction("新任务", new ImageIcon("images/tool/new_task.png")) {
+    java.net.URL newTask_imgURL = MainFrame.class.getResource("/images/tool/new_task.png");
+    private JButton newTask = create(new AbstractAction("新任务", new ImageIcon(newTask_imgURL)) {
         public void actionPerformed(ActionEvent e) {
             newTask();
         }
     });
-    private JButton start = create(new AbstractAction("开始", new ImageIcon("images/tool/begin.png")) {
+
+    java.net.URL start_imgURL = MainFrame.class.getResource("/images/tool/begin.png");
+    private JButton start = create(new AbstractAction("开始", new ImageIcon(start_imgURL)) {
         public void actionPerformed(ActionEvent e) {
             start();
         }
     });
 
-    private JButton pause = create(new AbstractAction("暂停", new ImageIcon("images/tool/pause.png")) {
+    java.net.URL pause_imgURL = MainFrame.class.getResource("/images/tool/pause.png");
+    private JButton pause = create(new AbstractAction("暂停", new ImageIcon(pause_imgURL)) {
         public void actionPerformed(ActionEvent e) {
             pause();
         }
     });
 
-    private JButton delete = create(new AbstractAction("删除任务", new ImageIcon("images/tool/delete.png")) {
+    java.net.URL delete_imgURL = MainFrame.class.getResource("/images/tool/delete.png");
+    private JButton delete = create(new AbstractAction("删除任务", new ImageIcon(delete_imgURL)) {
         public void actionPerformed(ActionEvent e) {
             delete();
         }
     });
 
-    private JButton deleteFinished = create(new AbstractAction("移除任务", new ImageIcon("images/tool/remove.png")) {
+    java.net.URL deleteFinished_imgURL = MainFrame.class.getResource("/images/tool/remove.png");
+    private JButton deleteFinished = create(new AbstractAction("移除任务", new ImageIcon(deleteFinished_imgURL)) {
         public void actionPerformed(ActionEvent e) {
             deleteFinished();
         }
     });
 
-    private JButton about = create(new AbstractAction("关 于", new ImageIcon("images/tool/about.png")) {
+    java.net.URL about_imgURL = MainFrame.class.getResource("/images/tool/about.png");
+    private JButton about = create(new AbstractAction("关 于", new ImageIcon(about_imgURL)) {
         public void actionPerformed(ActionEvent e) {
             about();
         }
@@ -132,7 +139,6 @@ public class MainFrame extends JFrame {
     private MenuItem startItem = new MenuItem("开始全部任务");
     private MenuItem pauseItem = new MenuItem("暂停全部任务");
     private MenuItem removeItem = new MenuItem("删除完成任务");
-    private MenuItem aboutItem = new MenuItem("关于");
     private MenuItem quitItem = new MenuItem("退出");
 
     private BufferedImage trayIconImage = ImageUtil.getImage(ImageUtil.TRAY_ICON_PATH);
@@ -171,12 +177,20 @@ public class MainFrame extends JFrame {
         mainPane.setDividerSize(3);
         mainPane.setDividerLocation((int)(screen.width/5.5));
 
+        //修改标题栏默认图标
+        Toolkit tk=Toolkit.getDefaultToolkit();
+        java.net.URL icon_imgURL = MainFrame.class.getResource("/images/icon/chan.jpg");
+        Image icon=tk.createImage(icon_imgURL);
+        this.setIconImage(icon);
+
+
         this.add(mainPane);
         this.setPreferredSize(new Dimension(screen.width, screen.height));
         this.setVisible(true);
         this.setTitle("MTDM");
         this.pack();
-        this.setLocation(450,210);
+        Dimension lScreen = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation((int)(lScreen.width/4), (int)(lScreen.height/4));
         initlisteners();
         //创建定时器
         Timer timer = new Timer(1000, refreshTable);
@@ -204,7 +218,6 @@ public class MainFrame extends JFrame {
         this.popupMenu.add(startItem);
         this.popupMenu.add(pauseItem);
         this.popupMenu.add(removeItem);
-        this.popupMenu.add(aboutItem);
         this.popupMenu.add(quitItem);
 
         try {
