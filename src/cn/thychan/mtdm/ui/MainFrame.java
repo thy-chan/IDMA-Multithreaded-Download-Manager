@@ -42,9 +42,9 @@ public class MainFrame extends JFrame {
     //工具栏
     private JToolBar toolBar = new JToolBar();
     //新任务界面
-    private NewTaskFrame taskFrame;
+    private NewTaskDialog taskDialog;
     //关于界面
-    private AboutFrame aboutFrame;
+    private AboutDialog aboutDialog;
     //所有任务节点
     private TaskNode taskNode = new TaskNode();
     //正在下载节点
@@ -143,8 +143,8 @@ public class MainFrame extends JFrame {
         createDownloadTable();
         //创建信息列表
         createList();
-        this.taskFrame = new NewTaskFrame();
-        this.aboutFrame = new AboutFrame();
+        this.taskDialog = new NewTaskDialog();
+        this.aboutDialog = new AboutDialog();
         //创建悬浮窗口
         this.suspendWindow = new SuspendWindow(this);
         //创建任务栏图标
@@ -187,12 +187,12 @@ public class MainFrame extends JFrame {
 
 
 
-    public NewTaskFrame getNewTaskFrame() {
-        return this.taskFrame;
+    public NewTaskDialog getNewTaskFrame() {
+        return this.taskDialog;
     }
 
-    public AboutFrame getAboutFrame(){
-        return this.aboutFrame;
+    public AboutDialog getAboutDialog(){
+        return this.aboutDialog;
     }
 
     /**
@@ -262,7 +262,7 @@ public class MainFrame extends JFrame {
         });
         this.newItem.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent arg0) {
-                taskFrame.setVisible(true);
+                taskDialog.setVisible(true);
             }
         });
         this.startItem.addActionListener(new ActionListener() {
@@ -423,7 +423,7 @@ public class MainFrame extends JFrame {
     }
 
     private void newTask() {
-        this.taskFrame.setVisible(true);
+        this.taskDialog.setVisible(true);
     }
 
     private void pause() {
@@ -464,7 +464,7 @@ public class MainFrame extends JFrame {
      * 关于
      */
     public void about(){
-        this.aboutFrame.setVisible(true);
+        this.aboutDialog.setVisible(true);
     }
 
 

@@ -16,7 +16,7 @@ import java.io.File;
 /**
  * Created by cn_cx on 2016/12/8.
  */
-public class NewTaskFrame extends JFrame {
+public class NewTaskDialog extends JDialog {
 
     //下载地址
     private JLabel addressLabel = new JLabel("下载地址: ");
@@ -44,7 +44,7 @@ public class NewTaskFrame extends JFrame {
 
     private FolderChooser folderChooser;
 
-    public NewTaskFrame() {
+    public NewTaskDialog() {
         //创建线程下拉
         createThreadCountSelect();
         this.targetSelectButton.setFont(new Font(null, Font.PLAIN, 12));
@@ -110,7 +110,10 @@ public class NewTaskFrame extends JFrame {
 
         this.add(mainBox);
         this.setTitle("新建下载任务");
+        this.setResizable(false);
+        this.setModal(true);
         this.pack();
+
         //初始化按钮监听器
         initLinsteners();
     }
@@ -232,7 +235,7 @@ public class NewTaskFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        NewTaskFrame nsf = new NewTaskFrame();
+        NewTaskDialog nsf = new NewTaskDialog();
         nsf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         nsf.setVisible(true);
     }

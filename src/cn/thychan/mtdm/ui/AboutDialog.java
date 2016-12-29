@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Administrator on 2016/12/8.
  */
-public class AboutFrame extends JFrame {
+public class AboutDialog extends JDialog {
     //提示的JLabel
     private JLabel author = new JLabel("Author: ThyChan");
     private JLabel blog = new JLabel("Blog: http://thychan.cn");
@@ -18,7 +18,7 @@ public class AboutFrame extends JFrame {
     //按钮
     private JButton confirmButton = new JButton("确定");
 
-    public AboutFrame() {
+    public AboutDialog() {
         //信息提示的JLabel
         Box warnBox = Box.createVerticalBox();
         warnBox.add(this.author);
@@ -44,7 +44,9 @@ public class AboutFrame extends JFrame {
 
         this.add(mainBox);
         this.setTitle("About");
-        this.setSize(400,200);
+        this.setSize(320,200);
+        this.setResizable(false);
+        this.setModal(true);
         //初始化按钮监听器
         initLinsteners();
     }
@@ -58,9 +60,10 @@ public class AboutFrame extends JFrame {
     }
 
     public static void main(String[] args) {
-        AboutFrame aboutFrame = new AboutFrame();
-        aboutFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        aboutFrame.setVisible(true);
+        AboutDialog aboutDialog = new AboutDialog();
+        aboutDialog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        aboutDialog.setVisible(true);
+
     }
 
 }
