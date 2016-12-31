@@ -6,16 +6,17 @@ import cn.thychan.mtdm.object.Resource;
 import java.io.File;
 import java.util.List;
 
-
 /**
  * Created by cn_cx on 2016/12/8.
  */
+
 public class FileUtil {
 
     public final static File SERIALIZABLE_FILE = new File("serializable.txt");
 
     /**
-     * 删除该下载文件的.part文件,
+     * 删除该下载文件的.part文件
+     * @param resource
      */
     public static void deletePartFiles(Resource resource) {
         List<Part> parts = resource.getParts();
@@ -39,6 +40,9 @@ public class FileUtil {
 
     /**
      * 得到.part文件的绝对路径
+     * @param resource
+     * @param part
+     * @return
      */
     public static String getPartFilePath(Resource resource, Part part) {
         return resource.getFilePath() + File.separator + part.getPartName();

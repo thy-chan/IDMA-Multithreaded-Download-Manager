@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 /**
  * Created by Administrator on 2016/12/8.
  */
+
 public class AboutDialog extends JDialog {
     //ÌáÊ¾µÄJLabel
     private JLabel about = new JLabel("MTDM(Multi-threaded Download Manager)");
@@ -63,7 +64,5 @@ public class AboutDialog extends JDialog {
         AboutDialog aboutDialog = new AboutDialog();
         aboutDialog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         aboutDialog.setVisible(true);
-
     }
-
 }

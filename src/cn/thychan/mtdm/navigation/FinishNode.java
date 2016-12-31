@@ -10,7 +10,6 @@ import javax.swing.*;
 /**
  * 下载完成节点
  */
-
 public class FinishNode implements DownloadNode {
 
     public ImageIcon getImageIcon() {

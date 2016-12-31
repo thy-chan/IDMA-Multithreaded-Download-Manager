@@ -18,5 +18,4 @@ public class DownloadingNode implements DownloadNode {
     public String getText() {
         return "ÕıÔÚÏÂÔØ";
     }
-
 }

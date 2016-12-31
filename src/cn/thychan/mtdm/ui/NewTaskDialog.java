@@ -18,6 +18,7 @@ import java.io.File;
 /**
  * Created by cn_cx on 2016/12/8.
  */
+
 public class NewTaskDialog extends JDialog {
 
     private static final String MSG = "请注意所需下载资源的扩展名格式, 否则会导致失败!";
@@ -99,7 +100,6 @@ public class NewTaskDialog extends JDialog {
                 }
             }
         });
-        //setLocationRelativeTo(null);
 
         //线程选择
         Box threadBox = Box.createHorizontalBox();
@@ -196,6 +196,7 @@ public class NewTaskDialog extends JDialog {
 
     /**
      * 如果保存的文件名称为空, 则从url中截取文件名称
+     * @return
      */
     private String getSaveFileName() {
         String url = this.address.getText();
@@ -240,6 +241,7 @@ public class NewTaskDialog extends JDialog {
 
     /**
      * 选择目录后执行的方法
+     * @param filePath
      */
     public void selectFolder(String filePath) {
         this.target.setText(filePath);

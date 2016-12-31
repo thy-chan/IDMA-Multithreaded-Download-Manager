@@ -113,6 +113,7 @@ public class Resource implements Serializable {
 
     /**
      * 返回文件大小
+     * @return
      */
     public int getSize() {
         try {
@@ -147,6 +148,7 @@ public class Resource implements Serializable {
 
     /**
      * 返回下载速度, 需要得到全部已下载的长度
+     * @return
      */
     public float getSpeed() {
         //得到当前所有块下载的大小
@@ -161,6 +163,7 @@ public class Resource implements Serializable {
 
     /**
      * 得到该资源已经下载的长度(计算所有块的长度)
+     * @return
      */
     public int getCurrentLength() {
         int result = 0;

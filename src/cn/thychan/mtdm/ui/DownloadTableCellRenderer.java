@@ -8,7 +8,6 @@ import java.awt.*;
  * Created by cn_cx on 2016/12/8.
  */
 
-
 public class DownloadTableCellRenderer extends DefaultTableCellRenderer {
 
     @Override
@@ -25,7 +24,4 @@ public class DownloadTableCellRenderer extends DefaultTableCellRenderer {
         this.setToolTipText(value.toString());
         return this;
     }
-
-
 }
-

@@ -11,14 +11,12 @@ import cn.thychan.mtdm.state.Finished;
 import cn.thychan.mtdm.state.Pause;
 import cn.thychan.mtdm.util.DateUtil;
 import cn.thychan.mtdm.util.FileUtil;
-import cn.thychan.mtdm.util.ImageUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -128,21 +126,6 @@ public class MainFrame extends JFrame {
         return button;
     }
 
-    //悬浮窗口
-    private SuspendWindow suspendWindow;
-    //任务栏图标
-    private TrayIcon trayIcon;
-    //任务栏图标菜单
-    private PopupMenu popupMenu = new PopupMenu();
-    private MenuItem openItem = new MenuItem("打开/关闭");
-    private MenuItem newItem = new MenuItem("新建下载任务");
-    private MenuItem startItem = new MenuItem("开始全部任务");
-    private MenuItem pauseItem = new MenuItem("暂停全部任务");
-    private MenuItem removeItem = new MenuItem("删除完成任务");
-    private MenuItem quitItem = new MenuItem("退出");
-
-    private BufferedImage trayIconImage = ImageUtil.getImage(ImageUtil.TRAY_ICON_PATH);
-
     public MainFrame() {
         //创建导航树
         createTree();
@@ -151,10 +134,6 @@ public class MainFrame extends JFrame {
         createList();
         this.taskDialog = new NewTaskDialog();
         this.aboutDialog = new AboutDialog();
-        //创建悬浮窗口
-        this.suspendWindow = new SuspendWindow(this);
-        //创建任务栏图标
-        createTrayIcon();
         //创建工具栏
         createToolBar();
         //设置主窗口大小
@@ -183,7 +162,6 @@ public class MainFrame extends JFrame {
         Image icon=tk.createImage(icon_imgURL);
         this.setIconImage(icon);
 
-
         this.add(mainPane);
         this.setPreferredSize(new Dimension(screen.width, screen.height));
         this.setVisible(true);
@@ -199,35 +177,12 @@ public class MainFrame extends JFrame {
         reverseSer();
     }
 
-
-
     public NewTaskDialog getNewTaskFrame() {
         return this.taskDialog;
     }
 
     public AboutDialog getAboutDialog(){
         return this.aboutDialog;
-    }
-
-    /**
-     * 创建任务栏图标
-     */
-    private void createTrayIcon() {
-        this.popupMenu.add(openItem);
-        this.popupMenu.add(newItem);
-        this.popupMenu.add(startItem);
-        this.popupMenu.add(pauseItem);
-        this.popupMenu.add(removeItem);
-        this.popupMenu.add(quitItem);
-
-        try {
-            SystemTray tray = SystemTray.getSystemTray();
-            this.trayIcon = new TrayIcon(trayIconImage, "MTDM", this.popupMenu);
-            this.trayIcon.setToolTip("MTDM");
-            tray.add(this.trayIcon);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     private void initlisteners() {
@@ -257,46 +212,6 @@ public class MainFrame extends JFrame {
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 setVisible(false);
-            }
-        });
-        //任务栏图标监听器
-        this.trayIcon.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent e) {
-                if (e.getClickCount() == 2) {
-                    setVisible(true);
-                }
-            }
-        });
-        this.openItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                if (isVisible()) setVisible(false);
-                else setVisible(true);
-            }
-        });
-        this.newItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                taskDialog.setVisible(true);
-            }
-        });
-        this.startItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                startAllTask();
-            }
-        });
-        this.pauseItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                pauseAllTask();
-            }
-        });
-        this.removeItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                deleteFinished();
-            }
-        });
-        this.quitItem.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent arg0) {
-                serializable();
-                System.exit(0);
             }
         });
     }
@@ -405,6 +320,16 @@ public class MainFrame extends JFrame {
 
     }
 
+    /**
+     * 新建任务
+     */
+    private void newTask() {
+        this.taskDialog.setVisible(true);
+    }
+
+    /**
+     * 开始下载
+     */
     private void start() {
         Resource r = getResource();
         if (r == null) return;
@@ -414,31 +339,8 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     * 开始全部任务
+     * 暂停下载
      */
-    public void startAllTask() {
-        for (Resource r : ContextHolder.ctx.resources) {
-            if (r.getState() instanceof Pause || r.getState() instanceof Failed) {
-                ContextHolder.dh.resumeDownload(r);
-            }
-        }
-    }
-
-    /**
-     * 暂停全部任务
-     */
-    public void pauseAllTask() {
-        for (Resource r : ContextHolder.ctx.resources) {
-            if (r.getState() instanceof Downloading) {
-                r.setState(ContextHolder.ctx.PAUSE);
-            }
-        }
-    }
-
-    private void newTask() {
-        this.taskDialog.setVisible(true);
-    }
-
     private void pause() {
         Resource r = getResource();
         if (r == null) return;
@@ -480,9 +382,9 @@ public class MainFrame extends JFrame {
         this.aboutDialog.setVisible(true);
     }
 
-
     /**
      * 得到用户在列表中所选择的资源
+     * @return
      */
     private Resource getResource() {
         int row = this.downloadTable.getSelectedRow();
@@ -491,7 +393,6 @@ public class MainFrame extends JFrame {
         String id = (String)this.downloadTable.getValueAt(row, column);
         return ContextHolder.ctx.getResource(id);
     }
-
 
     /**
      * 创建树
@@ -515,6 +416,4 @@ public class MainFrame extends JFrame {
         this.infoList.add(this.info);
         this.infoJList.setListData(infoList.toArray());
     }
-
-
 }

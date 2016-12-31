@@ -14,6 +14,7 @@ import java.util.List;
 /**
  * Created by cn_cx on 2016/12/8.
  */
+
 public class DownloadContext implements Serializable {
 
     //最大线程数
@@ -53,6 +54,8 @@ public class DownloadContext implements Serializable {
 
     /**
      * 根据ID去当前的资源集合中查找相应的资源
+     * @param id
+     * @return
      */
     public Resource getResource(String id) {
         for (Resource r : this.resources) {

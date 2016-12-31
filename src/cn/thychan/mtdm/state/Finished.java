@@ -10,6 +10,7 @@ import javax.swing.*;
 /**
  * Created by cn_cx on 2016/12/8.
  */
+
 public class Finished extends AbstractState {
 
     @Override
@@ -27,7 +28,4 @@ public class Finished extends AbstractState {
         //资源下载完成后取消任务
         ContextHolder.dh.stopTimer(resource);
     }
-
-
 }
-

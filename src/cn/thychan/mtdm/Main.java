@@ -16,6 +16,6 @@ public class Main {
     public static void main(String[] args) {
         MainFrame mf = new MainFrame();
         mf.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mf.setDefaultLookAndFeelDecorated(true);
     }
-
 }

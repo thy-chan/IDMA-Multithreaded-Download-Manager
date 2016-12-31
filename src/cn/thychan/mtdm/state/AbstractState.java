@@ -15,5 +15,4 @@ public abstract class AbstractState implements TaskState {
 	public void init(Resource resource) {
 
 	}
-
 }

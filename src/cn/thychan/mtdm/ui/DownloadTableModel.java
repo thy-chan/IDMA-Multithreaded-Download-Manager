@@ -6,11 +6,9 @@ import cn.thychan.mtdm.object.Resource;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
 
-
 /**
  * Created by cn_cx on 2016/12/8.
  */
-
 
 public class DownloadTableModel extends DefaultTableModel {
 
@@ -93,5 +91,4 @@ public class DownloadTableModel extends DefaultTableModel {
         }
         return super.getValueAt(row, column);
     }
-
 }

@@ -9,6 +9,7 @@ import javax.swing.*;
 /**
  * Created by cn_cx on 2016/12/8.
  */
+
 public class Failed extends AbstractState {
 
     @Override
@@ -27,5 +28,4 @@ public class Failed extends AbstractState {
         //当任务被设置为不可下载时, 停止时间计算器
         ContextHolder.dh.stopTimer(resource);
     }
-
 }
