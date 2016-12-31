@@ -6,133 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e56d6439-5735-49a1-a2ae-f83c182fb986" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/icon/chan.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/icon/mtdm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/icon/mtdm_trayicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/nav/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/nav/downloading.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/nav/fail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/nav/finish.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/nav/task.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/state/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/state/connecting.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/state/downloading.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/state/failed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/state/finished.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/state/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/quit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/remove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/suspend/start.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/about.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/begin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/new_task.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/tool/remove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MTDM_jar/MTDM.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$11.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$12.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$13.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$14.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$15.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$16.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$17.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$2.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$3.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$4.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$5.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$6.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$7.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow$8.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/SuspendWindow.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/icon/mtdm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/icon/mtdm_trayicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/quit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/remove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MTDM/images/suspend/start.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/SuspendWindow.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/icon/mtdm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/icon/mtdm_trayicon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/Thumbs.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/open.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/pause.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/quit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/remove.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/images/suspend/start.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ContextHolder.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ContextHolder.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/DownloadContext.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/DownloadContext.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/Main.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/navigation/FinishNode.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/navigation/FinishNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/object/Resource.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/object/Resource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Connecting.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Connecting.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Downloading.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Downloading.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Failed.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Failed.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Finished.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/state/Finished.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/thread/DownloadHandler$CountTimeTask.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/thread/DownloadHandler$CountTimeTask.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/thread/DownloadHandler.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/thread/DownloadHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/AboutDialog$1.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/AboutDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/AboutDialog.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/AboutDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/DownloadTableCellRenderer.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/DownloadTableCellRenderer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/DownloadTableModel.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/DownloadTableModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$1.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$10.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$2.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$3.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$4.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$5.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$6.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$6.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$7.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$7.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$8.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$8.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$9.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame$9.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/MainFrame.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NavigationTreeCellRender.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NavigationTreeCellRender.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NewTaskDialog$1.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NewTaskDialog$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NewTaskDialog$FolderChooser.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NewTaskDialog$FolderChooser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NewTaskDialog.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/ui/NewTaskDialog.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/DateUtil.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/DateUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/FileUtil.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/FileUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/ImageUtil.class" afterPath="$PROJECT_DIR$/out/production/MTDM/cn/thychan/mtdm/util/ImageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ContextHolder.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ContextHolder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/DownloadContext.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/DownloadContext.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/Main.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/DownloadNode.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/DownloadNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/DownloadingNode.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/DownloadingNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/FinishNode.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/navigation/FinishNode.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/object/Part.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/object/Part.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/object/Resource.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/object/Resource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/AbstractState.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/AbstractState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Connecting.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Connecting.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Downloading.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Downloading.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Failed.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Failed.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Finished.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/Finished.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/TaskState.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/state/TaskState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/thread/DownloadHandler.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/thread/DownloadHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/AboutDialog.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/AboutDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTable.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableCellRenderer.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableCellRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableModel.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/DownloadTableModel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/MainFrame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NavigationTree.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NavigationTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NavigationTreeCellRender.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NavigationTreeCellRender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskDialog.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/ui/NewTaskDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/DateUtil.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/DateUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/FileUtil.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/FileUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java" afterPath="$PROJECT_DIR$/src/cn/thychan/mtdm/util/ImageUtil.java" />
-    </list>
+    <list default="true" id="e56d6439-5735-49a1-a2ae-f83c182fb986" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -204,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="66">
-              <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -214,8 +88,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="153">
-                <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+              <first_editor relative-caret-position="-1299">
+                <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -995,15 +869,15 @@
       <workItem from="1482988981884" duration="2662000" />
       <workItem from="1483002876432" duration="14226000" />
       <workItem from="1483019324402" duration="6978000" />
-      <workItem from="1483146638282" duration="10738000" />
+      <workItem from="1483146638282" duration="11336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34604000" />
+    <option name="totallyTimeSpent" value="35202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1056" extended-state="7" />
+    <frame x="-11" y="-11" width="1942" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1026,7 +900,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31990233" sideWeight="0.48920086" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31990233" sideWeight="0.48920086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33693305" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49568033" order="1" side_tool="false" content_ui="tabs" />
@@ -1137,8 +1011,8 @@
         <state relative-caret-position="330">
           <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
           <folding>
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
+            <element signature="e#340#341#0" expanded="false" />
+            <element signature="e#369#370#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1265,7 +1139,7 @@
         <state relative-caret-position="430">
           <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1435,7 +1309,7 @@
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="66">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1443,8 +1317,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="153">
-            <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+          <first_editor relative-caret-position="-1299">
+            <caret line="50" column="43" lean-forward="false" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
             <folding />
           </first_editor>
           <second_editor />
