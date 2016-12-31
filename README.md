@@ -49,7 +49,7 @@ MTDM(Multi-threaded Download Manager)
 
 主界面如下:
 
-![mtdm](..\..\mtdm_imgs\mtdm.png)
+![mtdm](.\..\..\mtdm_imgs\mtdm.png)
 
 
 ### 2.2 项目实现编码概述
@@ -118,7 +118,7 @@ MTDM.jar已放置在项目文件的根目录下,只要拥有jre运行环境,便�
 
 简单测试如下:
 
-![test](..\..\mtdm_imgs\\temp.gif)
+![test](.\..\..\mtdm_imgs\\temp.gif)
 
 
 
