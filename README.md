@@ -48,7 +48,7 @@ MTDM(Multi-threaded Download Manager)
 
 主界面如下:
 
-![mtdm](https://github.com/thy-chan/MTDM-Multithreaded-Download-Manager/tree/master/mtdm_imgs/mtdm.png)
+![mtdm](https://raw.githubusercontent.com/thy-chan/MTDM-Multithreaded-Download-Manager/master/mtdm_imgs/mtdm.png)
 
 
 
@@ -118,7 +118,7 @@ MTDM.jar已放置在项目文件的根目录下,只要拥有jre运行环境,便�
 
 简单测试如下:
 
-![test](https://github.com/thy-chan/MTDM-Multithreaded-Download-Manager/tree/master/mtdm_imgs/temp.gif)
+![test](https://raw.githubusercontent.com/thy-chan/MTDM-Multithreaded-Download-Manager/master/mtdm_imgs/temp.gif)
 
 
 
